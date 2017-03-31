@@ -149,7 +149,7 @@ if (!is_null($events['events'])) {
 			$messages = [
 				"type" => "template",
   			"altText" => "this is a buttons template",
-  			"template" = {
+  			"template" => {
       			"type" => "buttons",
       			"thumbnailImageUrl" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Small-world-network-example.png/220px-Small-world-network-example.png",
       			"title" => "Menu",
