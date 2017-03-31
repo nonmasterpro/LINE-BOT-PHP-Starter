@@ -147,8 +147,23 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages = [
-				'type' => 'text',
-				'text' => 'https://www.google.co.th'
+				{
+  "type": "template",
+  "altText": "this is a buttons template",
+  "template": {
+      "type": "buttons",
+      "thumbnailImageUrl": "https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg",
+      "title": "Menu",
+      "text": "Please select",
+      "actions": [
+          {
+            "type": "uri",
+            "label": "View detail",
+            "uri": "https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg"
+          }
+      ]
+  }
+}
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
