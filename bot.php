@@ -147,11 +147,8 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages = [
-
-  "type": "template",
-  "altText": "this is a buttons template"
-
-
+				'type' => 'text',
+				'text' => 'https://www.google.co.th'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
