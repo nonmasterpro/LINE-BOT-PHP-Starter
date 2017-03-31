@@ -147,8 +147,7 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages = [
-				// "type" => "text",
-				// "text" => "https://www.google.co.th"
+
 
 				"type" => "image",
     		"originalContentUrl" => "https://pbs.twimg.com/profile_images/655066410087940096/QSUlrrlm.png",
@@ -199,9 +198,13 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages = [
-				'type' => 'sticker',
-				'packageId' => '1',
-				'stickerId' => (rand(1,17))
+
+				"type" => "text",
+				"text" => "https://www.google.co.th"
+
+				// 'type' => 'sticker',
+				// 'packageId' => '1',
+				// 'stickerId' => (rand(1,17))
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
