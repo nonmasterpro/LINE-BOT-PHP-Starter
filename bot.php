@@ -149,20 +149,8 @@ if (!is_null($events['events'])) {
 			$messages = [
 
   "type": "template",
-  "altText": "this is a buttons template",
-  "template": [
-      "type": "buttons",
-      "thumbnailImageUrl": "https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg",
-      "title": "Menu",
-      "text": "Please select",
-      "actions": [
+  "altText": "this is a buttons template"
 
-            "type": "uri",
-            "label": "View detail",
-            "uri": "https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg"
-
-      ]
-  ]
 
 			];
 
