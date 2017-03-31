@@ -147,8 +147,12 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages = [
-				"type" => "text",
-				"text" => "https://www.google.co.th"
+				// "type" => "text",
+				// "text" => "https://www.google.co.th"
+
+				"type" => "image",
+    		"originalContentUrl" => "https://pbs.twimg.com/profile_images/655066410087940096/QSUlrrlm.png",
+    		"previewImageUrl" => "https://pbs.twimg.com/profile_images/655066410087940096/QSUlrrlm.png"
 
 				// "type" => "template",
 				// "altText" => "this is a buttons template",
