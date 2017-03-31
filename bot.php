@@ -52,8 +52,8 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'sticker',
-				'packageId' => '10',
-				'stickerId' => '1'
+				'packageId' => '1',
+				'stickerId' => (rand(1,10))
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
