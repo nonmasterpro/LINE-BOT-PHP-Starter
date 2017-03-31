@@ -147,9 +147,9 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages = [
-				"type": "image",
-    		"originalContentUrl": "https://s3-us-west-1.amazonaws.com/powr/defaults/image-slider2.jpg",
-    		"previewImageUrl": "https://s3-us-west-1.amazonaws.com/powr/defaults/image-slider2.jpg"
+				'type': 'image',
+    		'originalContentUrl': 'https://s3-us-west-1.amazonaws.com/powr/defaults/image-slider2.jpg',
+    		'previewImageUrl': 'https://s3-us-west-1.amazonaws.com/powr/defaults/image-slider2.jpg'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
