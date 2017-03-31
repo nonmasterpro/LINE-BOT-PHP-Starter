@@ -147,28 +147,19 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages = [
-				"type": "template",
-  "altText": "this is a buttons template",
-  "template": {
-      "type": "buttons",
-      "thumbnailImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Wiktionary_small.svg/350px-Wiktionary_small.svg.png",
-      "title": "Menu",
-      "text": "Please select",
-      "actions": [
+				"type"=> "template",
+  "altText"=> "this is a buttons template",
+  "template"=> {
+      "type"=> "buttons",
+      "thumbnailImageUrl"=> "https://example.com/bot/images/image.jpg",
+      "title"=> "Menu",
+      "text"=> "Please select",
+      "actions"= [
+
           {
-            "type": "postback",
-            "label": "Buy",
-            "data": "action=buy&itemid=123"
-          },
-          {
-            "type": "postback",
-            "label": "Add to cart",
-            "data": "action=add&itemid=123"
-          },
-          {
-            "type": "uri",
-            "label": "View detail",
-            "uri": "https://www.google.co.th"
+            "type"=> "uri",
+            "label"=> "View detail",
+            "uri"=> "http://example.com/page/123"
           }
       ]
   }
