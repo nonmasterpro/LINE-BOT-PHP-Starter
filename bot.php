@@ -196,13 +196,13 @@ if (!is_null($events['events'])) {
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-			$userId = $event['source'];
+			$userId = $event['source']['userId'];
 
 			// Build message to reply back
 			$messages = [
 
 				'type' => 'text',
-				'text' => $userId
+				'text' => (echo json_encode($event));
 
 				// 'type' => 'sticker',
 				// 'packageId' => '1',
