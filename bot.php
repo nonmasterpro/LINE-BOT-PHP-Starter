@@ -202,7 +202,7 @@ if (!is_null($events['events'])) {
 			$messages = [
 
 				'type' => 'text',
-				'text' => (echo json_encode($event));
+				'text' => json_encode($event)
 
 				// 'type' => 'sticker',
 				// 'packageId' => '1',
