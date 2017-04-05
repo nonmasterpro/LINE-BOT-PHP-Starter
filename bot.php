@@ -196,12 +196,13 @@ if (!is_null($events['events'])) {
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+			$userId = $event['source']['userId'];
 
 			// Build message to reply back
 			$messages = [
 
-				"type" => "text",
-				"text" => "https://www.google.co.th"
+				'type' => 'text',
+				'text' => $event
 
 				// 'type' => 'sticker',
 				// 'packageId' => '1',
@@ -209,8 +210,11 @@ if (!is_null($events['events'])) {
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
-			// $url = 'https://api.line.me/v2/bot/profile/{userId}';
+			// $url = 'https://api.line.me/v2/bot/message/reply';
+
+			$url = 'https://api.line.me/v2/bot/profile/'.$userId.'';
+
+
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
