@@ -202,7 +202,7 @@ if (!is_null($events['events'])) {
 			$messages = [
 
 				'type' => 'text',
-				'text' => $event
+				'text' => $replyToken
 
 				// 'type' => 'sticker',
 				// 'packageId' => '1',
