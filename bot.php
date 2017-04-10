@@ -18,8 +18,8 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
       $userId = $event['source']['userId'];
-			
-			file_put_contents('test2.txt', $text);
+
+			file_put_contents('test2.txt', 'sasasasas');
 
 			// Build message to reply back
 			$messages = [
