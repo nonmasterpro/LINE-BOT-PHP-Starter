@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
 
       $userId = $event['source']['userId'];
 
-			file_put_contents('test.json', json_encode($text));
+			file_put_contents('test.json', json_decode($text),FILE_APPEND);
 
 			// $data[] = {'text': $text};
 			// $inp = file_get_contents('test.json');
