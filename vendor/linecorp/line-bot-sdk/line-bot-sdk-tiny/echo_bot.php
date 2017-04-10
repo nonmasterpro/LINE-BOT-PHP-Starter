@@ -48,3 +48,5 @@ foreach ($client->parseEvents() as $event) {
             break;
     }
 };
+
+echo "OKK";
