@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 				'text' => $text
 			];
 
-			file_put_contents('test.json', json_encode($text));
+			file_put_contents('test2.txt', json_encode($text));
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
