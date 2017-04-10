@@ -19,8 +19,8 @@ if (!is_null($events['events'])) {
 
       $userId = $event['source']['userId'];
 
-			file_put_contents('test.json', json_encode($text),FILE_APPEND);
-			
+			file_put_contents('test.json', json_encode($text));
+
 			// $data[] = {'text': $text};
 			// $inp = file_get_contents('test.json');
 			// $tempArray = json_decode($inp);
