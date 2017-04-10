@@ -21,10 +21,10 @@ if (!is_null($events['events'])) {
 
 			// file_put_contents('test.json', json_decode($text),FILE_APPEND);
 
-			// $data[] = ['text'=> $text];
+			$data = ['text'=> $text];
 			$inp = file_get_contents('test.json');
 			$tempArray = json_decode($inp);
-			array_push($tempArray, [$text]);
+			array_push($tempArray, $data);
 			$jsonData = json_encode($tempArray);
 			file_put_contents('test.json', $jsonData);
 
