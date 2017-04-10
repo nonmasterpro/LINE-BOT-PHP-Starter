@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
 
       $userId = $event['source']['userId'];
 
-			file_put_contents('test2.txt', json_encode({'text':$text}),FILE_APPEND);
+			file_put_contents('test2.txt', json_encode($text),FILE_APPEND);
 
 			// Build message to reply back
 			$messages = [
