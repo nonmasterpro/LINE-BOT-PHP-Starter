@@ -19,14 +19,14 @@ if (!is_null($events['events'])) {
 
       $userId = $event['source']['userId'];
 
-			file_put_contents('test.json', json_decode($text),FILE_APPEND);
+			// file_put_contents('test.json', json_decode($text),FILE_APPEND);
 
-			// $data[] = {'text': $text};
-			// $inp = file_get_contents('test.json');
-			// $tempArray = json_decode($inp);
-			// array_push($tempArray, $data);
-			// $jsonData = json_encode($tempArray);
-			// file_put_contents('test.json', $jsonData);
+			// $data[] = ['text'=> $text];
+			$inp = file_get_contents('test.json');
+			$tempArray = json_decode($inp);
+			array_push($tempArray, [$text]);
+			$jsonData = json_encode($tempArray);
+			file_put_contents('test.json', $jsonData);
 
 			// Build message to reply back
 			$messages = [
