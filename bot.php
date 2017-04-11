@@ -254,7 +254,7 @@ function getMassage($text)
 		//save the file
 		file_put_contents('text.json',json_encode($data));
 		unset($data);//release memory
-		return $text;
+		return "ไม่เข้าใจอ่าา ครั้งหน้ามาตอบให้เนอะ :D";
 	}
 }
 echo "OK";
