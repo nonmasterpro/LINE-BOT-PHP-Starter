@@ -1,17 +1,5 @@
 <?php
-// //database
-// $objConnect = mysql_connect("localhost","root","root");
-// 	if($objConnect)
-// 	{
-// 		echo "Database Connected.";
-// 	}
-// 	else
-// 	{
-// 		echo "Database Connect Failed.";
-// 	}
-//
-// 	mysql_close($objConnect);
-// //end database
+
 
 $access_token = 'ixp9bkbDiucV1rB5KIxGDwRLHeeaZD+wa2BfsBUUULPEc0Tzab4pMBk7w/knX8LaDSrmdmkOLuLI2LO9wsQDMvqnyr56kucCjJE+uvEkH+I+7U/AeL7oaWEC2UfYn983rxCiRbNBu9BREkc8qo94EwdB04t89/1O/w1cDnyilFU=';
 // $access_token = 'aa';
@@ -27,7 +15,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = $event['message']['text'];
+			// $text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -35,12 +23,12 @@ if (!is_null($events['events'])) {
 
 			// file_put_contents('test.json', json_decode($text),FILE_APPEND);
 
-			$data = ['text'=> $text];
-			$inp = file_get_contents('test.json');
-			$tempArray = json_decode($inp);
-			array_push($tempArray, $data);
-			$jsonData = json_encode($tempArray);
-			file_put_contents('test.json', $jsonData);
+			// $data = ['text'=> $text];
+			// $inp = file_get_contents('test.json');
+			// $tempArray = json_decode($inp);
+			// array_push($tempArray, $data);
+			// $jsonData = json_encode($tempArray);
+			// file_put_contents('test.json', $jsonData);
 
 			// Build message to reply back
 			$messages = [
@@ -70,44 +58,7 @@ if (!is_null($events['events'])) {
       echo $result . "\r\n";
 
 		}
-		// if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-		// 	// Get text sent
-		// 	$text = $event['message']['text'];
-		// 	// Get replyToken
-		// 	$replyToken = $event['replyToken'];
-		//
-    //   $userId = $event['source']['userId'];
-		//
-		// 	$messageId = $event['message']['id'];
-		//
-		// 	// Build message to reply back
-		// 	$messages = [
-		// 		'type' => 'text',
-		// 		'text' => $text
-		// 	];
-		//
-		// 	// Make a POST Request to Messaging API to reply to sender
-		// 	$url = 'https://api.line.me/v2/bot/message/messageId/content';
-		// 	$data = [
-		// 		'messageId' => [$messageId]
-		// 	];
-		// 	$post = json_encode($data);
-		// 	$headers = array('Authorization: Bearer ' . $access_token);
-		//
-		// 	$ch = curl_init($url);
-		// 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-		// 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		// 	curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-		// 	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-		// 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-		// 	$result = curl_exec($ch);
-		// 	curl_close($ch);
-		//
-    //   echo $result . "\r\n";
-		//
-		// }
-		else
-		if($event['type'] == 'message' && $event['message']['type'] == 'sticker'){
+		else if($event['type'] == 'message' && $event['message']['type'] == 'sticker'){
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
