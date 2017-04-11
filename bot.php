@@ -1,4 +1,22 @@
 <?php
+//database
+$host = "localhost";
+$username = "root";
+$password = "root";
+$objConnect = mysql_connect($host,$username,$password);
+// $objDB = mysql_select_db("testt");
+if($objConnect)
+{
+echo "MySQL Connected";
+}
+else
+{
+echo "MySQL Connect Failed : Error : ".mysql_error();
+}
+mysql_close($objConnect);
+
+//end database
+
 $access_token = 'ixp9bkbDiucV1rB5KIxGDwRLHeeaZD+wa2BfsBUUULPEc0Tzab4pMBk7w/knX8LaDSrmdmkOLuLI2LO9wsQDMvqnyr56kucCjJE+uvEkH+I+7U/AeL7oaWEC2UfYn983rxCiRbNBu9BREkc8qo94EwdB04t89/1O/w1cDnyilFU=';
 // $access_token = 'aa';
 
