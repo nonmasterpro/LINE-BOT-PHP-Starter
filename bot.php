@@ -1,16 +1,16 @@
 <?php
 // //database
-$objConnect = mysql_connect("localhost","root","root");
-	if($objConnect)
-	{
-		echo "Database Connected.";
-	}
-	else
-	{
-		echo "Database Connect Failed.";
-	}
-
-	mysql_close($objConnect);
+// $objConnect = mysql_connect("localhost","root","root");
+// 	if($objConnect)
+// 	{
+// 		echo "Database Connected.";
+// 	}
+// 	else
+// 	{
+// 		echo "Database Connect Failed.";
+// 	}
+//
+// 	mysql_close($objConnect);
 // //end database
 
 $access_token = 'ixp9bkbDiucV1rB5KIxGDwRLHeeaZD+wa2BfsBUUULPEc0Tzab4pMBk7w/knX8LaDSrmdmkOLuLI2LO9wsQDMvqnyr56kucCjJE+uvEkH+I+7U/AeL7oaWEC2UfYn983rxCiRbNBu9BREkc8qo94EwdB04t89/1O/w1cDnyilFU=';
