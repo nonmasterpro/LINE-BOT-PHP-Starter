@@ -45,7 +45,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => getMassage($text)
 			];
 
 
@@ -298,5 +298,23 @@ if (!is_null($events['events'])) {
 
 		}
 	}
+}
+
+function getMassage($text)
+{
+    $massage = ‘’;
+    $file = file_get_contents(‘text.json’);
+    $data = json_decode($file, true);
+    unset($file);//prevent memory leaks for large json.
+
+    if (isset($data[$text])) {
+        return $data[$text];
+    }else{
+        $data[$text] = ‘’;
+        //save the file
+        file_put_contents(‘text.json’,json_encode($data));
+        unset($data);//release memory
+        return $text;
+    }
 }
 echo "OK";
