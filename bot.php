@@ -280,7 +280,9 @@ function getMassage($text,$uid)
 					return $row2["text_val"];
 				}
     }
-	}
+	}else{
+     return "0 results";
+ }
 }
 else if ($rowuser["status"]==3){
 	$sss = "UPDATE leaving SET day='".$text."' WHERE uid_line='".$uid."'";
@@ -289,9 +291,7 @@ else if ($rowuser["status"]==3){
 }
 }
 }
- else{
-    return "0 results";
-}
+
 
 
 
