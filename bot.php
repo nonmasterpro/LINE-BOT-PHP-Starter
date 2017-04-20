@@ -297,7 +297,7 @@ function getMassage($text,$uid)
  }
 }
 else if ($rowuser["status"]==2){
-	$s = "INSERT INTO leaving (day,uid_line,type) VALUES ('".$text."','".$uid."','ลาป่วย')";
+	$s = "INSERT INTO leaving (day,uid_line,type) VALUES ('".$text."','".$rowuser["name"]."','ลาป่วย')";
 	$updateInfo = $conn->query($s);
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
