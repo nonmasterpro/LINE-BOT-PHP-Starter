@@ -270,6 +270,8 @@ function getMassage($text,$uid)
 			$val = "SELECT text_val FROM msg_val WHERE id = '".$row["id_key"]."'";
 			$resultVal = $conn->query($val);
         while($row2 = $resultVal->fetch_assoc()) {
+					$ss = "UPDATE users SET status=3 WHERE uid_line='".$uid."'";
+					$up = $conn->query($ss);
 					return $row2["text_val"];
 				}
     }
