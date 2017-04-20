@@ -239,10 +239,7 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-$servername = "ap-cdbr-azure-southeast-b.cloudapp.net";
-$username = "bc4dcc5c7e5a47";
-$password = "7de74729";
-$dbname = "chatbot_db";
+
 
 function getMassage($text,$uid)
 {
@@ -251,15 +248,17 @@ function getMassage($text,$uid)
    unset($file);
   //  return "uid";
    // Create connection
+	 $servername = "ap-cdbr-azure-southeast-b.cloudapp.net";
+	 $username = "bc4dcc5c7e5a47";
+	 $password = "7de74729";
+	 $dbname = "chatbot_db";
    $conn = mysqli_connect($servername, $username, $password, $dbname);
    // Check connection
-   if ($conn) {
+   if (!$conn) {
        // die(“Connection failed: ” . mysqli_connect_error());
       //  return mysqli_connect_error();
-			return "eee";
-   }else if (!$conn){
-		 return "non";
-	 }
+			return "can't connect to db";
+   }
 
    $sql = "SELECT * FROM users WHERE uid_line=".$uid."";
    if (mysqli_query($conn, $sql)) {
