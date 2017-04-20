@@ -260,7 +260,7 @@ function getMassage($text,$uid)
 			return "can't connect to db";
    }
 
-   $sql = "SELECT * FROM users WHERE uid_line=U64a21163286610324b7a04adebb44777";
+   $sql = "SELECT * FROM users WHERE uid_line='U64a21163286610324b7a04adebb44777'";
    if (mysqli_query($conn, $sql)) {
        $result = $conn->query($sql);
        return $result->num_rows;
