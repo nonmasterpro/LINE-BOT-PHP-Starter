@@ -256,7 +256,9 @@ function getMassage($text,$uid)
    if (!$conn) {
        // die(“Connection failed: ” . mysqli_connect_error());
        return mysqli_connect_error();
-   }
+   }else if ($conn){
+		 return "non";
+	 }
 
    $sql = "SELECT * FROM users WHERE uid_line=".$uid."";
    if (mysqli_query($conn, $sql)) {
