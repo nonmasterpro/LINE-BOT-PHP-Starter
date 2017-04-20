@@ -269,8 +269,8 @@ function getMassage($text,$uid)
     while($row = $result->fetch_assoc()) {
 			$val = "SELECT text_val FROM msg_val WHERE id='".$row["id_key"]."'";
 			$resultVal = $conn->query($val);
-        while($row = $result->fetch_assoc()) {
-					return $row["id"];
+        while($row2 = $resultVal->fetch_assoc()) {
+					return $row2["id"];
 				}
     }
 } else {
