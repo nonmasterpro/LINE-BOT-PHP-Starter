@@ -298,21 +298,21 @@ function getMassage($text,$uid)
 }
 else if ($rowuser["status"]==2){
 	$s = "INSERT INTO leaving (day,uid_line,type) VALUES ('".$text."','".$uid."','ลาป่วย')";
-	$updateDay = $conn->query($s);
+	$updateInfo = $conn->query($s);
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
 
 	return "ขอบคุณค่าา";
 }else if ($rowuser["status"]==3){
 	$ss = "INSERT INTO leaving (day,uid_line,type) VALUES ('".$text."','".$uid."','ลากิจ')";
-	$updateDay = $conn->query($ss);
+	$updateInfo = $conn->query($ss);
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
 
 	return "ขอบคุณค่าา";
 }else if($rowuser["status"]==4){
 	$sss = "INSERT INTO leaving (day,uid_line,type) VALUES ('".$text."','".$uid."','ลาพักร้อน')";
-	$updateDay = $conn->query($sss);
+	$updateInfo = $conn->query($sss);
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
 
@@ -320,8 +320,6 @@ else if ($rowuser["status"]==2){
 }
 }
 }
-
-
 
 
    mysqli_close($conn);
