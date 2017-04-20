@@ -246,7 +246,7 @@ $dbname = "chatbot_db";
 
 function getMassage($text,$uid)
 {
-   $file = file_get_contents(‘text.json’);
+   $file = file_get_contents('text.json');
    $data = json_decode($file, true);
    unset($file);
    return "uid";
@@ -258,13 +258,13 @@ function getMassage($text,$uid)
        return mysqli_connect_error();
    }
 
-   $sql = “SELECT * FROM users WHERE uid_line=“.$uid.“”;
+   $sql = "SELECT * FROM users WHERE uid_line=".$uid."";
    if (mysqli_query($conn, $sql)) {
        $result = $conn->query($sql);
        return $result->num_rows;
        // return “New record created successfully”;
    } else {
-       return “Error: ” . $sql . “<br>” . mysqli_error($conn);
+       return "Error: " . $sql . "<br>" . mysqli_error($conn);
    }
 
    mysqli_close($conn);
@@ -274,9 +274,9 @@ function getMassage($text,$uid)
    if (isset($data[$text])) {
        return $data[$text];
    }else{
-       $data[$text] = ‘’;
+       $data[$text] = '';
        //save the file
-       file_put_contents(‘text.json’,json_encode($data));
+       file_put_contents('text.json',json_encode($data));
        //release memory
        unset($data);
        return $text;
