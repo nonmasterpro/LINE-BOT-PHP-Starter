@@ -304,14 +304,14 @@ else if ($rowuser["status"]==2){
 
 	return "ขอบคุณค่าา";
 }else if ($rowuser["status"]==3){
-	$ss = "INSERT INTO leaving (day,uid_line) VALUES ('".$text."','".$uid."','ลากิจ')";
+	$ss = "INSERT INTO leaving (day,uid_line,type) VALUES ('".$text."','".$uid."','ลากิจ')";
 	$updateDay = $conn->query($ss);
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
 
 	return "ขอบคุณค่าา";
 }else if($rowuser["status"]==4){
-	$sss = "INSERT INTO leaving (day,uid_line) VALUES ('".$text."','".$uid."','ลาพักร้อน')";
+	$sss = "INSERT INTO leaving (day,uid_line,type) VALUES ('".$text."','".$uid."','ลาพักร้อน')";
 	$updateDay = $conn->query($sss);
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
