@@ -264,7 +264,7 @@ function getMassage($text,$uid)
 	 $resultUser = $conn->query($sql);
 
 	 if($resultUser->num_rows > 0){
-		 while($rowuser = $result->fetch_assoc()) {
+		 while($rowuser = $resultUser->fetch_assoc()) {
 			 if($rowuser["status"]==1){
 
 	 $key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
