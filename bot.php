@@ -240,7 +240,7 @@ if (!is_null($events['events'])) {
 	}
 }
 $servername = "ap-cdbr-azure-southeast-b.cloudapp.net";
-$username = :"bc4dcc5c7e5a47";
+$username = "bc4dcc5c7e5a47";
 $password = "7de74729";
 $dbname = "chatbot_db";
 
