@@ -265,7 +265,18 @@ function getMassage($text,$uid)
 
 	 if($resultUser->num_rows > 0){
 		 while($rowuser = $resultUser->fetch_assoc()) {
-			 if($rowuser["status"]==1){
+			 if($rowuser["status"]==0){
+				 if ($rowuser["id_card"] == null) {
+					$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
+					$result = $conn->query($sql);
+					return "วาชาบิ อยากทราบชื่อ ตัวเองจัง";
+				}else if($rowuser["name"] == null){
+					$sql 	= "UPDATE users SET name='".$text."', status=1 WHERE uid_line='".$uid."'";
+					$result = $conn->query($sql);
+					return "สวัส ดีค่ะ คุณ   ".$text;
+				}
+			 }
+			 else if($rowuser["status"]==1){
 
 	 $key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
    $result = $conn->query($key);
@@ -319,7 +330,12 @@ else if ($rowuser["status"]==2){
 	return "ขอบคุณค่าา";
 }
 }
-}
+}else{
+		// $sql = " * FROM users WHERE uid_line='".$uid."'";
+		$sql 	= "INSERT INTO users (uid_line) VALUES ('".$uid."')";
+		$result = $conn->query($sql);
+		return "หมายเลขบัตรประชาชนหมายเลขอะไร ค่ะ";
+	}
 
 
    mysqli_close($conn);
