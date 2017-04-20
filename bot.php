@@ -260,13 +260,19 @@ function getMassage($text,$uid)
 			return "can't connect to db";
    }
 
-   $sql = "SELECT * FROM users WHERE name='Teerapong Boonmak'";
+   $sql = "SELECT * FROM users WHERE uid_line='.$uid.'";
+
+	 $key = "SELECT * FROM msg_key WHERE text_key = '.$text.'"
    if (mysqli_query($conn, $sql)) {
        $result = $conn->query($sql);
        return $result->num_rows;
 			//  return $uid;
        // return “New record created successfully”;
-   } else {
+   } else if(mysqli_query($conn, $key)){
+		 $result = $conn->query($key);
+		 return $result;
+	 }
+		 else {
        return "Error: " . $sql . "<br>" . mysqli_error($conn);
    }
 
