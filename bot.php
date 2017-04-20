@@ -263,15 +263,17 @@ function getMassage($text,$uid)
   //  $sql = "SELECT * FROM users WHERE uid_line='".$uid."'";
 
 	 $key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
+   $result = $conn->query($key);
+	 if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        return $row["id_key"]
+    }
+} else {
+    return "0 results";
+}
 
-   if (mysqli_query($conn, $key)) {
-       $result = $conn->query($key);
-       return $result->fetch_assoc();
-			//  return $uid;
-       // return “New record created successfully”;
-   } else {
-       return "Error: " . $sql . "<br>" . mysqli_error($conn);
-   }
+
 
    mysqli_close($conn);
 
