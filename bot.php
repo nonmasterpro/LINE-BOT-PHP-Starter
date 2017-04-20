@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => getMassage($text)
+				'text' => getMassage($text,$userId)
 			];
 
 
@@ -239,22 +239,47 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
+$servername = "ap-cdbr-azure-southeast-b.cloudapp.net";
+$username = :"bc4dcc5c7e5a47";
+$password = "7de74729";
+$dbname = "chatbot_db";
 
-function getMassage($text)
+function getMassage($text,$uid)
 {
+   $file = file_get_contents(‘text.json’);
+   $data = json_decode($file, true);
+   unset($file);
+   return "$uid";
+   // Create connection
+   $conn = mysqli_connect($servername, $username, $password, $dbname);
+   // Check connection
+   if (!$conn) {
+       // die(“Connection failed: ” . mysqli_connect_error());
+       return mysqli_connect_error();
+   }
 
-	$file = file_get_contents('text.json');
-	$data = json_decode($file, true);
-	unset($file);//prevent memory leaks for large json.
+   $sql = “SELECT * FROM users WHERE uid_line=“.$uid.“”;
+   if (mysqli_query($conn, $sql)) {
+       $result = $conn->query($sql);
+       return $result->num_rows;
+       // return “New record created successfully”;
+   } else {
+       return “Error: ” . $sql . “<br>” . mysqli_error($conn);
+   }
 
-	if (isset($data[$text])) {
-		return $data[$text];
-	}else{
-		$data[$text] = '';
-		//save the file
-		file_put_contents('text.json',json_encode($data));
-		unset($data);//release memory
-		return "ไม่เข้าใจอ่าา ครั้งหน้ามาตอบให้เนอะ :D";
-	}
+   mysqli_close($conn);
+
+
+   //prevent memory leaks for large json.
+   if (isset($data[$text])) {
+       return $data[$text];
+   }else{
+       $data[$text] = ‘’;
+       //save the file
+       file_put_contents(‘text.json’,json_encode($data));
+       //release memory
+       unset($data);
+       return $text;
+   }
 }
 echo "OK";
