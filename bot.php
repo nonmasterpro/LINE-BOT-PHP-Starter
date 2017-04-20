@@ -263,7 +263,8 @@ function getMassage($text,$uid)
    $sql = "SELECT * FROM users WHERE uid_line='.$uid.'";
    if (mysqli_query($conn, $sql)) {
        $result = $conn->query($sql);
-       return $result->num_rows;
+      //  return $result->num_rows;
+			 return $uid;
        // return “New record created successfully”;
    } else {
        return "Error: " . $sql . "<br>" . mysqli_error($conn);
