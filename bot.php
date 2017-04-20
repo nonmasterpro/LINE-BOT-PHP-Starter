@@ -276,7 +276,15 @@ function getMassage($text,$uid)
 			$resultVal = $conn->query($val);
         while($row2 = $resultVal->fetch_assoc()) {
 					if($row["id_key"]==2){
+					$ss = "UPDATE users SET status=2 WHERE uid_line='".$uid."'";
+					$up = $conn->query($ss);
+					return $row2["text_val"];
+				}else if($row["id_key"]==3){
 					$ss = "UPDATE users SET status=3 WHERE uid_line='".$uid."'";
+					$up = $conn->query($ss);
+					return $row2["text_val"];
+				}else if($row["id_key"]==4){
+					$ss = "UPDATE users SET status=4 WHERE uid_line='".$uid."'";
 					$up = $conn->query($ss);
 					return $row2["text_val"];
 				}else{
@@ -288,9 +296,25 @@ function getMassage($text,$uid)
      return "0 results";
  }
 }
-else if ($rowuser["status"]==3){
-	$sss = "INSERT INTO leaving (day,uid_line) VALUES ('".$text."','".$uid."')";
+else if ($rowuser["status"]==2){
+	$sss = "INSERT INTO leaving (day,uid_line,type) VALUES ('".$text."','".$uid."','ลาป่วย')";
 	$updateDay = $conn->query($sss);
+	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
+	$up = $conn->query($updateStatus);
+
+	return "ขอบคุณค่าา";
+}else if ($rowuser["status"]==3){
+	$sss = "INSERT INTO leaving (day,uid_line) VALUES ('".$text."','".$uid."','ลากิจ')";
+	$updateDay = $conn->query($sss);
+	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
+	$up = $conn->query($updateStatus);
+
+	return "ขอบคุณค่าา";
+}else if($rowuser["status"]==4){
+	$sss = "INSERT INTO leaving (day,uid_line) VALUES ('".$text."','".$uid."','ลาพักร้อน')";
+	$updateDay = $conn->query($sss);
+	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
+	$up = $conn->query($updateStatus);
 
 	return "ขอบคุณค่าา";
 }
