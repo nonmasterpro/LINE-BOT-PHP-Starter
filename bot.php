@@ -260,7 +260,7 @@ function getMassage($text,$uid)
 			return "can't connect to db";
    }
 
-   $sql = "SELECT * FROM users WHERE uid_line='.$uid.'";
+   $sql = "SELECT * FROM users WHERE name='Teerapong Boonmak'";
    if (mysqli_query($conn, $sql)) {
        $result = $conn->query($sql);
        return $result->num_rows;
