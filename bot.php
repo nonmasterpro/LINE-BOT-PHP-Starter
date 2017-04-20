@@ -260,7 +260,7 @@ function getMassage($text,$uid)
 			return "can't connect to db";
    }
 
-   $sql = "SELECT * FROM users WHERE uid_line='.$uid.'";
+  //  $sql = "SELECT * FROM users WHERE uid_line='.$uid.'";
 
 	 $key = "SELECT * FROM msg_key WHERE text_key = '.$text.'"
    if(mysqli_query($conn, $key)){
@@ -268,7 +268,7 @@ function getMassage($text,$uid)
 		 return $result->num_rows;
 	 }
 		 else {
-       return "Error: " . $sql . "<br>" . mysqli_error($conn);
+       return "Error: " . $key . "<br>" . mysqli_error($conn);
    }
 
    mysqli_close($conn);
