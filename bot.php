@@ -255,7 +255,8 @@ function getMassage($text,$uid)
    // Check connection
    if (!$conn) {
        // die(“Connection failed: ” . mysqli_connect_error());
-       return mysqli_connect_error();
+      //  return mysqli_connect_error();
+			return "eee";
    }else if ($conn){
 		 return "non";
 	 }
