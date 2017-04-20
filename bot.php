@@ -260,7 +260,12 @@ function getMassage($text,$uid)
 			return "can't connect to db";
    }
 
-  //  $sql = "SELECT * FROM users WHERE uid_line='".$uid."'";
+   $sql = "SELECT * FROM users WHERE uid_line='".$uid."'";
+	 $resultUser = $conn->query($sql);
+
+	 if($resultUser->num_rows > 0){
+		 while($rowuser = $result->fetch_assoc()) {
+			 if($rowuser["status"]==1){
 
 	 $key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
    $result = $conn->query($key);
@@ -275,7 +280,16 @@ function getMassage($text,$uid)
 					return $row2["text_val"];
 				}
     }
-} else {
+	}
+}
+else if ($rowuser["status"]==3){
+	$sss = "UPDATE leaving SET day='".$text."' WHERE uid_line='".$uid."'";
+	$updateDay = $conn->query($sss);
+	return "ขอบคุณค่าา";
+}
+}
+}
+ else{
     return "0 results";
 }
 
