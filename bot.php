@@ -262,7 +262,8 @@ function getMassage($text,$uid)
 
    $sql = "SELECT * FROM users WHERE id=1";
 
-	 $key = "SELECT * FROM msg_key WHERE text_key = '.$text.'"
+	 $key = "SELECT * FROM msg_key WHERE text_key = '.$text.'";
+
    if (mysqli_query($conn, $sql)) {
        $result = $conn->query($sql);
        return $result->num_rows;
