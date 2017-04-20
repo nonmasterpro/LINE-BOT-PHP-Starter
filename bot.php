@@ -266,7 +266,7 @@ function getMassage($text,$uid)
 
    if (mysqli_query($conn, $key)) {
        $result = $conn->query($key);
-       return $result;
+       echo $result;
 			//  return $uid;
        // return “New record created successfully”;
    } else {
