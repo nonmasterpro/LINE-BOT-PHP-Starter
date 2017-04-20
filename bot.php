@@ -273,7 +273,7 @@ function getMassage($text,$uid)
 				}else if($rowuser["name"] == null){
 					$sql 	= "UPDATE users SET name='".$text."', status=1 WHERE uid_line='".$uid."'";
 					$result = $conn->query($sql);
-					return "สวัส ดีค่ะ คุณ   ".$text;
+					return "สวัสดีค่ะ คุณ   ".$text;
 				}
 			 }
 			 else if($rowuser["status"]==1){
@@ -304,7 +304,7 @@ function getMassage($text,$uid)
 				}
     }
 	}else{
-     return "0 results";
+     return "ยังไม่เข้าใจคำนี้ค่ะ ไว้โอกาศหน้าเนอะะ :D";
  }
 }
 else if ($rowuser["status"]==2){
@@ -334,7 +334,7 @@ else if ($rowuser["status"]==2){
 		// $sql = " * FROM users WHERE uid_line='".$uid."'";
 		$sql 	= "INSERT INTO users (uid_line) VALUES ('".$uid."')";
 		$result = $conn->query($sql);
-		return "หมายเลขบัตรประชาชนหมายเลขอะไร ค่ะ";
+		return "ขอทรายหมายเลขบัตรประชาชนด้วยค่ะ :)";
 	}
 
 
