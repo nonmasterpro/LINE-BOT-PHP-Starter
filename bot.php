@@ -260,7 +260,7 @@ function getMassage($text,$uid)
 			return "can't connect to db";
    }
 
-   $sql = "SELECT * FROM users WHERE id=1";
+   $sql = "SELECT * FROM users WHERE uid_line='".$uid."'";
 
 	 $key = "SELECT * FROM msg_key WHERE text_key = '.$text.'";
 
