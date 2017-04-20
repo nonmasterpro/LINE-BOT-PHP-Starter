@@ -289,7 +289,7 @@ function getMassage($text,$uid)
  }
 }
 else if ($rowuser["status"]==3){
-	$sss = "INSERT INTO leaving (day,uid_line) VALUES ($text,$uid);
+	$sss = "INSERT INTO leaving (day,uid_line) VALUES ($text,$uid)";
 	$updateDay = $conn->query($sss);
 
 	return "ขอบคุณค่าา";
