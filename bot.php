@@ -266,10 +266,9 @@ function getMassage($text,$uid)
    $result = $conn->query($key);
 	 if ($result->num_rows > 0) {
     // output data of each row
-    // while($row = $result->fetch_assoc()) {
-    //     return $row["id_key"]
-    // }
-		return "asd";
+    while($row = $result->fetch_assoc()) {
+        return $row["id_key"];
+    }
 } else {
     return "0 results";
 }
