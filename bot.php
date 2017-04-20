@@ -262,7 +262,7 @@ function getMassage($text,$uid)
 
   //  $sql = "SELECT * FROM users WHERE uid_line='".$uid."'";
 
-	 $key = "SELECT * FROM msg_key WHERE text_key = '".$text."'";
+	 $key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
 
    if (mysqli_query($conn, $key)) {
        $result = $conn->query($key);
