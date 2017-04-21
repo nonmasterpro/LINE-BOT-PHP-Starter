@@ -211,13 +211,13 @@ if (!is_null($events['events'])) {
 						"thumbnailImageUrl" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Small-world-network-example.png/220px-Small-world-network-example.png",
 						"title" => "Menu",
 						"text" => "Please select",
-						"actions" = [
+						"actions" = 
 												{
 													"type"=> "uri",
 													"label"=> "View detail",
 													"uri"=> "https://www.google.co.th/"
 												}
-				]
+
 				}
 
 				// 'type' => 'sticker',
