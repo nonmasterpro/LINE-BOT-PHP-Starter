@@ -204,8 +204,21 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 
-				'type' => 'text',
-				'text' => json_encode($event)
+				"type" => "template",
+				"altText" => "this is a buttons template",
+				"template" => {
+						"type" => "buttons",
+						"thumbnailImageUrl" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Small-world-network-example.png/220px-Small-world-network-example.png",
+						"title" => "Menu",
+						"text" => "Please select",
+						"actions" = [
+												{
+													"type"=> "uri",
+													"label"=> "View detail",
+													"uri"=> "http://www.google.com"
+												}
+				]
+				}
 
 				// 'type' => 'sticker',
 				// 'packageId' => '1',
