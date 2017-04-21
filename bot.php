@@ -200,7 +200,7 @@ if (!is_null($events['events'])) {
 												[
             							"type"=> "postback",
             							"label"=> "Add to cart",
-            							"text"=> "yyyyyyy"
+            							"data"=> "action=add&itemid=111"
           							],
 												[
 													"type"=> "uri",
