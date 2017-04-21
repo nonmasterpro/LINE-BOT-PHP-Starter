@@ -198,9 +198,9 @@ if (!is_null($events['events'])) {
 						"text" => "Please select",
 						"actions" => [
 												[
-            							"type"=> "postback",
+            							"type"=> "message",
             							"label"=> "Add to cart",
-            							"data"=> "action=add&itemid=111"
+            							"text"=> "yyyyyyy"
           							],
 												[
 													"type"=> "uri",
