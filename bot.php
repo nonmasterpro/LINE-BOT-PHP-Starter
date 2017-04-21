@@ -299,7 +299,8 @@ function getMassage($text,$uid)
 					$up = $conn->query($ss);
 					return $row2["text_val"];
 				}else{
-					return $row2["text_val"];
+					// return $row2["text_val"];
+					return getTemplate($row["id_key"]);
 				}
 				}
     }
@@ -352,5 +353,32 @@ else if ($rowuser["status"]==2){
        unset($data);
        return $text;
    }
+}
+
+function getTemplate($key){
+
+	if($key==1){
+
+	"type" => "template",
+	"altText" => "this is a buttons template",
+	"template" => [
+			"type" => "buttons",
+			"thumbnailImageUrl" => "https://f.ptcdn.info/308/047/000/ogtr5llydKGk55LG7kM-o.jpg",
+			"title" => "Menu",
+			"text" => "Please select",
+			"actions" => [
+									[
+										"type"=> "message",
+										"label"=> "Add to cart",
+										"text"=> "yyyyyyy"
+									],
+									[
+										"type"=> "uri",
+										"label"=> "View detail",
+										"uri"=> "https://www.google.co.th"
+									]
+								]
+	]
+	}
 }
 echo "OK";
