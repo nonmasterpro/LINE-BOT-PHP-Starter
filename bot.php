@@ -398,13 +398,18 @@ function getTemplate(){
 				"actions" => [
 										[
 											"type"=> "message",
-											"label"=> "Add to cart",
-											"text"=> "yyyyyyy"
+											"label"=> "ลาป่วย",
+											"text"=> "ลาป่วย"
 										],
 										[
-											"type"=> "uri",
-											"label"=> "View detail",
-											"uri"=> "https://www.google.co.th"
+											"type"=> "message",
+											"label"=> "ลากิจ",
+											"text"=> "ลากิจ"
+										],
+										[
+											"type"=> "message",
+											"label"=> "ลาพักร้อน",
+											"text"=> "ลาพักร้อน"
 										]
 									]
 		]]
