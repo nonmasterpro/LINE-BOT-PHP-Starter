@@ -21,7 +21,8 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages = [
-				;
+				'type' => 'text',
+				'text' => getMassage($text,$userId)
 			];
 
 
@@ -353,5 +354,27 @@ else if ($rowuser["status"]==2){
    }
 }
 
-
+// function getTemplate(){
+// 	$massage = ["type" => "template",
+// 	"altText" => "this is a buttons template",
+// 	"template" => [
+// 			"type" => "buttons",
+// 			"thumbnailImageUrl" => "https://f.ptcdn.info/308/047/000/ogtr5llydKGk55LG7kM-o.jpg",
+// 			"title" => "Menu",
+// 			"text" => "Please select",
+// 			"actions" => [
+// 									[
+// 										"type"=> "message",
+// 										"label"=> "Add to cart",
+// 										"text"=> "yyyyyyy"
+// 									],
+// 									[
+// 										"type"=> "uri",
+// 										"label"=> "View detail",
+// 										"uri"=> "https://www.google.co.th"
+// 									]
+// 								]
+// 	]
+// ]
+// }
 echo "OK";
