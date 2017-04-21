@@ -298,8 +298,8 @@ function getMassage($text,$uid)
 					$ss = "UPDATE users SET status=4 WHERE uid_line='".$uid."'";
 					$up = $conn->query($ss);
 					return $row2["text_val"];
-				}else if ($row["id_key"]==1) {
-					return "asdaasdasd";
+				}else if($row["id_key"]==1){
+					return 1;
 				}else{
 					return $row2["text_val"];
 				}
