@@ -355,7 +355,7 @@ else if ($rowuser["status"]==2){
 }
 
 function getTemplate(){
-	return []"type" => "template",
+	return ["type" => "template",
 	"altText" => "this is a buttons template",
 	"template" => [
 			"type" => "buttons",
