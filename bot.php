@@ -204,25 +204,25 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 
-				"type" => "template",
-				"altText" => "this is a buttons template",
-				"template" => {
-						"type" => "buttons",
-						"thumbnailImageUrl" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Small-world-network-example.png/220px-Small-world-network-example.png",
-						"title" => "Menu",
-						"text" => "Please select",
-						"actions" =
-												{
-													"type"=> "uri",
-													"label"=> "View detail",
-													"uri"=> "https://www.google.co.th/"
-												}
+				// "type" => "template",
+				// "altText" => "this is a buttons template",
+				// "template" => {
+				// 		"type" => "buttons",
+				// 		"thumbnailImageUrl" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Small-world-network-example.png/220px-Small-world-network-example.png",
+				// 		"title" => "Menu",
+				// 		"text" => "Please select",
+				// 		"actions" =[
+				// 								{
+				// 									"type"=> "uri",
+				// 									"label"=> "View detail",
+				// 									"uri"=> "https://www.google.co.th/"
+				// 								}
+				// 							]
+				// }
 
-				}
-
-				// 'type' => 'sticker',
-				// 'packageId' => '1',
-				// 'stickerId' => (rand(1,17))
+				'type' => 'sticker',
+				'packageId' => '1',
+				'stickerId' => (rand(1,17))
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
