@@ -42,14 +42,14 @@ if (!is_null($events['events'])) {
 	  		 }else{
 					 $messages = [
 		 				'type' => 'text',
-		 				'text' => 'getMassage($text,$userId)'
+		 				'text' => getMassage($text,$userId)
 		 			];
 				 }
 	     }
 	 	}else{
 			$messages = [
 				'type' => 'text',
-				'text' => getMassage($text,$userId)
+				'text' => 'getMassage($text,$userId)'
 			];
 	  }
 
