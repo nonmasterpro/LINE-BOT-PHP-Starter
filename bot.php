@@ -354,7 +354,7 @@ else if ($rowuser["status"]==2){
 }
 
 function getTemplate(){
-	$massage = ["type" => "template",
+	return "type" => "template",
 	"altText" => "this is a buttons template",
 	"template" => [
 			"type" => "buttons",
@@ -373,7 +373,6 @@ function getTemplate(){
 										"uri"=> "https://www.google.co.th"
 									]
 								]
-	]
-];
+	];
 }
 echo "OK";
