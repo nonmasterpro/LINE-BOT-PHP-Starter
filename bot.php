@@ -21,8 +21,7 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages = [
-				'type' => 'text',
-				'text' => getMassage($text,$userId)
+				;
 			];
 
 
@@ -355,7 +354,7 @@ else if ($rowuser["status"]==2){
 }
 
 function getTemplate(){
-	"type" => "template",
+	$massage = ["type" => "template",
 	"altText" => "this is a buttons template",
 	"template" => [
 			"type" => "buttons",
@@ -375,5 +374,6 @@ function getTemplate(){
 									]
 								]
 	]
+];
 }
 echo "OK";
