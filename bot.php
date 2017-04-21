@@ -269,11 +269,11 @@ function getMassage($text,$uid)
 				 if ($rowuser["id_card"] == null) {
 					$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
 					$result = $conn->query($sql);
-					return "วาชาบิ อยากทราบชื่อ ตัวเองจัง";
+					return "วาชาบิ รบกวนตัวเองบอกชื่อหน่อยน้าา (funny)";
 				}else if($rowuser["name"] == null){
 					$sql 	= "UPDATE users SET name='".$text."', status=1 WHERE uid_line='".$uid."'";
 					$result = $conn->query($sql);
-					return "สวัสดีค่ะ คุณ   ".$text;
+					return "สวัสดีค่ะ คุณ   ".$text."(3 hearts)";
 				}
 			 }
 			 else if($rowuser["status"]==1){
@@ -334,7 +334,7 @@ else if ($rowuser["status"]==2){
 		// $sql = " * FROM users WHERE uid_line='".$uid."'";
 		$sql 	= "INSERT INTO users (uid_line) VALUES ('".$uid."')";
 		$result = $conn->query($sql);
-		return "ขอทรายหมายเลขบัตรประชาชนด้วยค่ะ :)";
+		return "วาซาบิ ขอทรายหมายเลขบัตรประชาชนด้วยค่ะ (happy)";
 	}
 
 
