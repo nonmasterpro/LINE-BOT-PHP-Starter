@@ -281,6 +281,9 @@ function getMassage($text,$uid)
 	 $key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
    $result = $conn->query($key);
 	 if ($result->num_rows > 0) {
+		 if($row["id_key"]==1){
+			 return 1;
+		 }
     // output data of each row
     while($row = $result->fetch_assoc()) {
 			$val = "SELECT text_val FROM msg_val WHERE id = '".$row["id_key"]."'";
@@ -298,8 +301,6 @@ function getMassage($text,$uid)
 					$ss = "UPDATE users SET status=4 WHERE uid_line='".$uid."'";
 					$up = $conn->query($ss);
 					return $row2["text_val"];
-				}else if($row["id_key"]==1){
-					return 1;
 				}else{
 					return $row2["text_val"];
 				}
