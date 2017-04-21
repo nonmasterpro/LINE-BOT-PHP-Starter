@@ -341,7 +341,7 @@ function getMassage($text,$uid)
 				}
     }
 	}else{
-     return "ยังไม่เข้าใจคำนี้ค่ะ ไว้โอกาศหน้าเนอะะ >o<";
+     return "ไปกินก๋วยเตี๋ยวเรือดีกว่าา(เสียงพี่เล็ก)";
  }
 }
 else if ($rowuser["status"]==2){
