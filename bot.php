@@ -299,8 +299,7 @@ function getMassage($text,$uid)
 					$up = $conn->query($ss);
 					return $row2["text_val"];
 				}else{
-					// return $row2["text_val"];
-					return getTemplate($row["id_key"]);
+					return $row2["text_val"];
 				}
 				}
     }
