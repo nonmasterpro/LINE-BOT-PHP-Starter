@@ -31,20 +31,15 @@ if (!is_null($events['events'])) {
 
 			$key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
 	    $result = $conn->query($key);
-			return $result->num_rows;
+
 			if ($result->num_rows > 0) {
 
 	     // output data of each row
 	     while($row = $result->fetch_assoc()) {
 
 	 			if($row["id_key"]==1){
-	  			 return $messages = getTemplate();
-	  		 }else{
-					 $messages = [
-		 				'type' => 'text',
-		 				'text' => getMassage($text,$userId)
-		 			];
-				 }
+	  			 $messages = getTemplate();
+	  		 }
 	     }
 	 	}else{
 			$messages = [
