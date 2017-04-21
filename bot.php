@@ -281,11 +281,14 @@ function getMassage($text,$uid)
 	 $key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
    $result = $conn->query($key);
 	 if ($result->num_rows > 0) {
-		 if($row["id_key"]==1){
-			 return 1;
-		 }
+
     // output data of each row
     while($row = $result->fetch_assoc()) {
+
+			if($row["id_key"]==1){
+ 			 return 1;
+ 		 }
+		 
 			$val = "SELECT text_val FROM msg_val WHERE id = '".$row["id_key"]."'";
 			$resultVal = $conn->query($val);
         while($row2 = $resultVal->fetch_assoc()) {
