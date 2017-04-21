@@ -39,7 +39,12 @@ if (!is_null($events['events'])) {
 
 	 			if($row["id_key"]==1){
 	  			 $messages = getTemplate();
-	  		 }
+	  		 }else{
+					 $messages = [
+		 				'type' => 'text',
+		 				'text' => getMassage($text,$userId)
+		 			];
+				 }
 	     }
 	 	}else{
 			$messages = [
