@@ -362,7 +362,7 @@ else if ($rowuser["status"]==2){
 
 function getTemplate(){
 	return
-		"type" => "template",
+		["type" => "template",
 		"altText" => "this is a buttons template",
 		"template" => [
 				"type" => "buttons",
@@ -381,7 +381,7 @@ function getTemplate(){
 											"uri"=> "https://www.google.co.th"
 										]
 									]
-		]
+		]]
 ;
 }
 
