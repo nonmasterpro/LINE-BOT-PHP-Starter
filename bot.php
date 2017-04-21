@@ -38,15 +38,13 @@ if (!is_null($events['events'])) {
 	     while($row = $result->fetch_assoc()) {
 
 	 			if($row["id_key"]==1){
-	  			 return getTemplate();
+	  			 return $messages = getTemplate();
 	  		 }else{
 					 $messages = [
 		 				'type' => 'text',
 		 				'text' => getMassage($text,$userId)
 		 			];
 				 }
-
-
 	     }
 	 	}else{
 			$messages = [
