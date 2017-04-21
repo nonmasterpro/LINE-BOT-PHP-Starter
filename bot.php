@@ -38,7 +38,10 @@ if (!is_null($events['events'])) {
 	     while($row = $result->fetch_assoc()) {
 
 	 			if($row["id_key"]==1){
-	  			 return $messages = getTemplate();
+	  			 return $messages = [
+		 				'type' => 'text',
+		 				'text' => 'getMassage($text,$userId)'
+		 			];
 	  		 }else{
 					 $messages = [
 		 				'type' => 'text',
@@ -49,7 +52,7 @@ if (!is_null($events['events'])) {
 	 	}else{
 			$messages = [
 				'type' => 'text',
-				'text' => 'getMassage($text,$userId)'
+				'text' => getMassage($text,$userId)
 			];
 	  }
 
