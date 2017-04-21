@@ -320,7 +320,7 @@ function getMassage($text,$uid)
  			 return getTemplate();
  		 }
 
-			$val = "SELECT text_val FROM msg_val WHERE id = '".$row["id_key"]."'";
+			$val = "SELECT text_val FROM msg_val WHERE id_val = '".$row["id_key"]."'";
 			$resultVal = $conn->query($val);
         while($row2 = $resultVal->fetch_assoc()) {
 					if($row["id_key"]==2){
