@@ -269,7 +269,7 @@ function getMassage($text,$uid)
 				 if ($rowuser["id_card"] == null) {
 					$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
 					$result = $conn->query($sql);
-					return "วาชาบิ รบกวนตัวเองบอกชื่อหน่อยน้าา :D";
+					return "วาซาบิ รบกวนตัวเองบอกชื่อหน่อยน้าา (> _ <)";
 				}else if($rowuser["name"] == null){
 					$sql 	= "UPDATE users SET name='".$text."', status=1 WHERE uid_line='".$uid."'";
 					$result = $conn->query($sql);
@@ -304,7 +304,7 @@ function getMassage($text,$uid)
 				}
     }
 	}else{
-     return "ยังไม่เข้าใจคำนี้ค่ะ ไว้โอกาศหน้าเนอะะ :D";
+     return "ยังไม่เข้าใจคำนี้ค่ะ ไว้โอกาศหน้าเนอะะ >o<";
  }
 }
 else if ($rowuser["status"]==2){
@@ -313,28 +313,28 @@ else if ($rowuser["status"]==2){
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
 
-	return "ขอบคุณค่าา";
+	return "ขอบคุณค่าา >.<";
 }else if ($rowuser["status"]==3){
 	$ss = "INSERT INTO leaving (day,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลากิจ')";
 	$updateInfo = $conn->query($ss);
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
 
-	return "ขอบคุณค่าา";
+	return "ขอบคุณค่าา >.<";
 }else if($rowuser["status"]==4){
 	$sss = "INSERT INTO leaving (day,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลาพักร้อน')";
 	$updateInfo = $conn->query($sss);
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
 
-	return "ขอบคุณค่าา";
+	return "ขอบคุณค่าา >.<";
 }
 }
 }else{
 		// $sql = " * FROM users WHERE uid_line='".$uid."'";
 		$sql 	= "INSERT INTO users (uid_line) VALUES ('".$uid."')";
 		$result = $conn->query($sql);
-		return "วาซาบิ ขอทรายหมายเลขบัตรประชาชนด้วยค่ะ ";
+		return "วาซาบิ ขอทราบหมายเลขบัตรประชาชนด้วยค่ะ >_< ";
 	}
 
 
