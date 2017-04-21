@@ -215,7 +215,7 @@ if (!is_null($events['events'])) {
 												{
 													"type"=> "uri",
 													"label"=> "View detail",
-													"uri"=> "http://www.google.com"
+													"uri"=> "https://www.google.co.th/"
 												}
 				]
 				}
