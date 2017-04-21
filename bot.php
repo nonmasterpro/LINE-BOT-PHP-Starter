@@ -191,12 +191,12 @@ if (!is_null($events['events'])) {
 
 				"type" => "template",
 				"altText" => "this is a buttons template",
-				"template" => {
+				"template" = {
 						"type" => "buttons",
 						"thumbnailImageUrl" => "https://f.ptcdn.info/308/047/000/ogtr5llydKGk55LG7kM-o.jpg",
 						"title" => "Menu",
 						"text" => "Please select",
-						"actions" => [
+						"actions" = [
 												{
             							"type"=> "postback",
             							"label"=> "Add to cart",
