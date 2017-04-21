@@ -10,20 +10,53 @@ $events = json_decode($content, true);
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
+
+
+
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-      $userId = $event['source']['userId'];
+			$userId = $event['source']['userId'];
 
-			// Build message to reply back
+			$servername = "ap-cdbr-azure-southeast-b.cloudapp.net";
+			$username = "bc4dcc5c7e5a47";
+			$password = "7de74729";
+			$dbname = "chatbot_db";
+			$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+			$key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
+	    $result = $conn->query($key);
+
+			if ($result->num_rows > 0) {
+
+	     // output data of each row
+	     while($row = $result->fetch_assoc()) {
+
+	 			if($row["id_key"]==1){
+	  			 return getTemplate();
+	  		 }else{
+					 $messages = [
+		 				'type' => 'text',
+		 				'text' => getMassage($text,$userId)
+		 			];
+				 }
+
+
+	     }
+	 	}else{
 			$messages = [
 				'type' => 'text',
 				'text' => getMassage($text,$userId)
 			];
+	  }
+
+			// Build message to reply back
+
 
 
 			// Make a POST Request to Messaging API to reply to sender
