@@ -341,37 +341,39 @@ function getMassage($text,$uid)
 				}
     }
 	}else{
-     return "ไปกินก๋วยเตี๋ยวเรือดีกว่าา(เสียงพี่เล็ก)";
+     return "ไปกินก๋วยเตี๋ยวเรือดีกว่าา 😜";
  }
 }
 else if ($rowuser["status"]==2){
-	$s = "INSERT INTO leaving (day,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลาป่วย')";
+	$s = "INSERT INTO leaving (cause,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลาป่วย')";
 	$updateInfo = $conn->query($s);
-	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
+	$updateStatus = "UPDATE users SET status=2.1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
-
-	return "ขอบคุณค่าา >.<";
+	
+	return "ขอบคุณค่าา 😍";
 }else if ($rowuser["status"]==3){
-	$ss = "INSERT INTO leaving (day,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลากิจ')";
+	$ss = "INSERT INTO leaving (cause,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลากิจ')";
 	$updateInfo = $conn->query($ss);
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
 
-	return "ขอบคุณค่าา >.<";
+	return "ขอบคุณค่าา 😍";
 }else if($rowuser["status"]==4){
-	$sss = "INSERT INTO leaving (day,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลาพักร้อน')";
+	$sss = "INSERT INTO leaving (cause,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลาพักร้อน')";
 	$updateInfo = $conn->query($sss);
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
 
-	return "ขอบคุณค่าา >.<";
+	return "ขอบคุณค่าา 😍";
 }
+
 }
+
 }else{
 		// $sql = " * FROM users WHERE uid_line='".$uid."'";
 		$sql 	= "INSERT INTO users (uid_line) VALUES ('".$uid."')";
 		$result = $conn->query($sql);
-		return "วาซาบิ ขอทราบหมายเลขบัตรประชาชนด้วยค่ะ >_< ";
+		return "วาซาบิ ขอทราบหมายเลขบัตรประชาชนด้วยค่ะ 😁 ";
 	}
 
 
