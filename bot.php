@@ -318,7 +318,7 @@ function getMassage($text,$uid)
 
 			if($row["id_key"]==1){
  			 return getTemplate();
- 		 }else if ($row["id_key"]==99){
+ 		 }else if ($row["id_key"]==6){
 			 return getTemplate();
 		 }
 
