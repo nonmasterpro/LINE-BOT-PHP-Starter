@@ -319,7 +319,7 @@ function getMassage($text,$uid)
 			if($row["id_key"]==1){
  			 return getTemplate();
  		 }else if ($row["id_key"]==6){
-			 return getTemplate();
+			 return "dede";
 		 }
 
 			$val = "SELECT * FROM msg_val WHERE id_val = '".$row["id_key"]."'";
