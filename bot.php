@@ -333,10 +333,10 @@ function getMassage($text,$uid)
 
 		 if ($result->num_rows > 0) {
 			 while($roww1 = $result3->fetch_assoc()) {
-				 $data['result1'] = $roww["quota"];
+				 $data = $roww["quota"];
 			 }
 			 while($roww = $result2->fetch_assoc()) {
-				$data2['result2'] = $roww["quota"];
+				$data2 = $roww["quota"];
 			}
 
 			 return "จำนวนวันลาป่วยของคุณเหลือ ".$data['result1']." วันค่ะ 😙 ".$data['result2'];
