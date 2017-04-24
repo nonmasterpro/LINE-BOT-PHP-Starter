@@ -346,15 +346,15 @@ function getMassage($text,$uid)
 }
 else if ($rowuser["status"]==2){
 	$s = "INSERT INTO leaving (cause,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลาป่วย')";
-	$rowuser["status"] = 9;
 	$updateInfo = $conn->query($s);
-	$updateStatus = "UPDATE users SET status=$rowuser["status"] WHERE uid_line='".$uid."'";
+	$updateStatus = "UPDATE users SET status=9 WHERE uid_line='".$uid."'";
+	$rowuser["status"] = 9;
 	$up = $conn->query($updateStatus);
 
 	$val2 = "SELECT text_val FROM msg_val WHERE id_val = '".$rowuser["status"]."'";
 	$resultVal2 = $conn->query($val2);
 		while($row3 = $resultVal2->fetch_assoc()) {
-			return $val2;
+			return $row3["text_val"];
 		}
 
 }else if ($rowuser["status"]==3){
