@@ -347,8 +347,8 @@ function getMassage($text,$uid)
 else if ($rowuser["status"]==2){
 	$s = "INSERT INTO leaving (cause,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลาป่วย')";
 	$updateInfo = $conn->query($s);
-	$updateStatus = "UPDATE users SET status=9 WHERE uid_line='".$uid."'";
-	$rowuser["status"] = 9;
+	$updateStatus = "UPDATE users SET status=2.1 WHERE uid_line='".$uid."'";
+	$rowuser["status"] = 2.1;
 	$up = $conn->query($updateStatus);
 
 	$val2 = "SELECT text_val FROM msg_val WHERE id_val = '".$rowuser["status"]."'";
@@ -366,6 +366,13 @@ else if ($rowuser["status"]==2){
 	return "ขอบคุณค่าา 😍";
 }else if($rowuser["status"]==4){
 	$sss = "INSERT INTO leaving (cause,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลาพักร้อน')";
+	$updateInfo = $conn->query($sss);
+	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
+	$up = $conn->query($updateStatus);
+
+	return "ขอบคุณค่าา 😍";
+}else if ($rowuser["status"]==2.1){
+	$sss = "INSERT INTO leaving (day) VALUES ('".$text."')";
 	$updateInfo = $conn->query($sss);
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
