@@ -349,7 +349,6 @@ else if ($rowuser["status"]==2){
 	$updateInfo = $conn->query($s);
 	$updateStatus = "UPDATE users SET status=9 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
-	return "vb"
 
 }else if ($rowuser["status"]==3){
 	$ss = "INSERT INTO leaving (cause,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลากิจ')";
