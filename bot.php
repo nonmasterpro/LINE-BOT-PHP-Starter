@@ -322,11 +322,15 @@ function getMassage($text,$uid)
 //เช็คโควต้าลา
 		 else if ($row["id_key"]==6){
 
-		 $quota = "SELECT * FROM leaving_quota WHERE id=11 AND id_card = '".$rowuser["id_card"]."'";
-		 $result = $conn->query($quota);
+		 $quotaP = "SELECT * FROM leaving_quota WHERE type='ลาป่วย' AND id_card = '".$rowuser["id_card"]."'";
+		 $quotaK = "SELECT * FROM leaving_quota WHERE type='ลากิจ' AND id_card = '".$rowuser["id_card"]."'";
+		 $quotaS = "SELECT * FROM leaving_quota WHERE type='ลาพักร้อน' AND id_card = '".$rowuser["id_card"]."'";
+		 $result = $conn->query($quotaP);
+		 $result2 = $conn->query($quotaK);
+		 $result3 = $conn->query($quotaS);
 		 if ($result->num_rows > 0) {
-			 while($roww = $result->fetch_assoc()) {
-				 return "จำนวนวันลาป่วยของคุณเหลือ ".$roww["quota"]." วันค่ะ 😙";
+			 while($roww = $result->fetch_assoc() && $roww2 = $result2->fetch_assoc()) {
+				 return "จำนวนวันลาป่วยของคุณเหลือ ".$roww["quota"]." วันค่ะ 😙 ".$roww2["quota"];
 			 }
 		 }
 
