@@ -364,6 +364,10 @@ else if ($rowuser["status"]==2){
 	$up = $conn->query($updateStatus);
 
 	return "ขอบคุณค่าา 😍";
+}
+
+}
+
 }else if ($rowuser["status"]==9){
 	$val2 = "SELECT * FROM msg_val WHERE id_val = '".$rowuser["status"]."'";
 	$resultVal2 = $conn->query($val2);
@@ -373,10 +377,7 @@ else if ($rowuser["status"]==2){
 		}
 
 }
-
-}
-
-}else{
+else{
 		// $sql = " * FROM users WHERE uid_line='".$uid."'";
 		$sql 	= "INSERT INTO users (uid_line) VALUES ('".$uid."')";
 		$result = $conn->query($sql);
