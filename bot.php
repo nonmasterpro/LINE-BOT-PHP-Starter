@@ -391,7 +391,7 @@ else if ($rowuser["status"]==2){
 }else if($rowuser["status"]==4){
 	$sss = "INSERT INTO leaving (cause,name,type,status) VALUES ('".$text."','".$rowuser["name"]."','ลาพักร้อน',1)";
 	$updateInfo = $conn->query($sss);
-	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
+	$updateStatus = "UPDATE users SET status=4.1 WHERE uid_line='".$uid."'";
 	$rowuser["status"] = 4.1;
 	$up = $conn->query($updateStatus);
 
