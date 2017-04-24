@@ -332,11 +332,11 @@ function getMassage($text,$uid)
 		 $text = '';
 		 if ($result->num_rows > 0) {
 			 while($roww1 = $result3->fetch_assoc()) {
-				 $text.=$roww["quota"];
+				 $text.=$roww1["quota"];
 			 }
-			//  while($roww = $result2->fetch_assoc()) {
-			// 	 $text.=$roww["quota"];
-			// }
+			 while($roww = $result2->fetch_assoc()) {
+				 $text.=$roww["quota"];
+			}
 
 			 return "จำนวนวันลาป่วยของคุณเหลือ ".$text." วันค่ะ 😙 ";
 		 }
