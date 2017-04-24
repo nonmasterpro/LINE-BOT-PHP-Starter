@@ -349,17 +349,17 @@ else if ($rowuser["status"]==2){
 	$updateInfo = $conn->query($s);
 	$updateStatus = "UPDATE users SET status=2.1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
-		if($rowuser["status"]==2.1){
-			$val = "SELECT * FROM msg_val WHERE id_val = '".$rowuser["status"]."'";
-			$resultVal = $conn->query($val);
-        while($row2 = $resultVal->fetch_assoc()) {
-					if($row["id_key"]==2){
-					$ss = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
-					$up = $conn->query($ss);
-					return $row2["text_val"];
-				}
+
+	$val = "SELECT * FROM msg_val WHERE id_val = '".$rowuser["status"]."'";
+	$resultVal = $conn->query($val);
+		while($row3 = $resultVal->fetch_assoc()) {
+
+			$ss = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
+			$up = $conn->query($ss);
+			return $row3["text_val"];
 		}
-	return "ขอบคุณค่าา 😍";
+
+
 }else if ($rowuser["status"]==3){
 	$ss = "INSERT INTO leaving (cause,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลากิจ')";
 	$updateInfo = $conn->query($ss);
