@@ -330,7 +330,7 @@ function getMassage($text,$uid)
 		 $result3 = $conn->query($quotaS);
 		 $data= '';
 		 if ($result->num_rows > 0) {
-			 while($roww = $result->fetch_assoc()) {
+			 while($roww = $result3->fetch_assoc()) {
 				 $data['result1'] = $roww["quota"];
 			 }
 			 while($roww = $result2->fetch_assoc()) {
