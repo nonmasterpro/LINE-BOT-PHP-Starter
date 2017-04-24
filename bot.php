@@ -328,16 +328,16 @@ function getMassage($text,$uid)
 		 $result = $conn->query($quotaP);
 		 $result2 = $conn->query($quotaK);
 		 $result3 = $conn->query($quotaS);
-		 $data= '';
+		 
 		 if ($result->num_rows > 0) {
 			 while($roww1 = $result3->fetch_assoc()) {
-				 	$data[] = $roww1["quota"];
+				 $data['result1'] = $roww["quota"];
 			 }
 			 while($roww = $result2->fetch_assoc()) {
-					$data[] = $roww["quota"];
+				$data['result2'] = $roww["quota"];
 			}
 
-			 return "จำนวนวันลาป่วยของคุณเหลือ ".$data[0]." วันค่ะ 😙 ".$data[1];
+			 return "จำนวนวันลาป่วยของคุณเหลือ ".$data['result1']." วันค่ะ 😙 ".$data['result2'];
 		 }
 
 		 }
