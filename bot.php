@@ -329,7 +329,7 @@ function getMassage($text,$uid)
 		 $result2 = $conn->query($quotaK);
 		 $result3 = $conn->query($quotaS);
 		 if ($result->num_rows > 0) {
-			 while($roww = $result->fetch_assoc() && $roww2 = $result2->fetch_assoc() && $roww3 = $result3->fetch_assoc()) {
+			 while($roww = $result->fetch_assoc(), $roww2 = $result2->fetch_assoc() , $roww3 = $result3->fetch_assoc()) {
 				 return "จำนวนวันลาป่วยของคุณเหลือ ".$roww["quota"]." วันค่ะ 😙 ".$roww2["quota"].$roww3["quota"];
 			 }
 		 }
