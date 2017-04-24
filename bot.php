@@ -315,11 +315,16 @@ function getMassage($text,$uid)
 
     // output data of each row
     while($row = $result->fetch_assoc()) {
-
+//เรียกเทมเพลทการลา
 			if($row["id_key"]==1){
  			 return getTemplate();
- 		 }else if ($row["id_key"]==6){
-			 return "dede";
+ 		 }
+//เช็คโควต้าลา
+		 else if ($row["id_key"]==6){
+
+		 $quota = "SELECT * FROM leaving_quota WHERE id_card = '".$rowuser["id_card"]."'";
+
+			 return $quota;
 		 }
 
 			$val = "SELECT * FROM msg_val WHERE id_val = '".$row["id_key"]."'";
