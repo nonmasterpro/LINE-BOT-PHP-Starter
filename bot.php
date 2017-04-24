@@ -389,10 +389,24 @@ else if ($rowuser["status"]==2){
 
 	return "ขอบคุณค่าา 😍";
 }else if($rowuser["status"]==4){
-	$sss = "INSERT INTO leaving (cause,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลาพักร้อน')";
+	$sss = "INSERT INTO leaving (cause,name,type,status) VALUES ('".$text."','".$rowuser["name"]."','ลาพักร้อน',1)";
+	$updateInfo = $conn->query($sss);
+	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
+	$rowuser["status"] = 4.1;
+	$up = $conn->query($updateStatus);
+
+	$val2 = "SELECT text_val FROM msg_val WHERE id_val = '".$rowuser["status"]."'";
+	$resultVal2 = $conn->query($val2);
+		while($row3 = $resultVal2->fetch_assoc()) {
+			return $row3["text_val"];
+		}
+}else if ($rowuser["status"]==4.1){
+	$sss = "UPDATE leaving SET day='$text' WHERE status=1";
 	$updateInfo = $conn->query($sss);
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
+	$updateStatus2 = "UPDATE leaving SET status=2 WHERE status=1";
+	$up2 = $conn->query($updateStatus2);
 
 	return "ขอบคุณค่าา 😍";
 }
