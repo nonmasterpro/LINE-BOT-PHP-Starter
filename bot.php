@@ -357,6 +357,13 @@ else if ($rowuser["status"]==2){
 			return $row3["text_val"];
 		}
 
+}else if ($rowuser["status"]==2.1){
+	$sss = "UPDATE leaving SET day='".$text."' ";
+	$updateInfo = $conn->query($sss);
+	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
+	$up = $conn->query($updateStatus);
+
+	return "ขอบคุณค่าา 😍";
 }else if ($rowuser["status"]==3){
 	$ss = "INSERT INTO leaving (cause,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลากิจ')";
 	$updateInfo = $conn->query($ss);
@@ -366,13 +373,6 @@ else if ($rowuser["status"]==2){
 	return "ขอบคุณค่าา 😍";
 }else if($rowuser["status"]==4){
 	$sss = "INSERT INTO leaving (cause,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลาพักร้อน')";
-	$updateInfo = $conn->query($sss);
-	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
-	$up = $conn->query($updateStatus);
-
-	return "ขอบคุณค่าา 😍";
-}else if ($rowuser["status"]==2.1){
-	$sss = "INSERT INTO leaving (day) VALUES ('".$text."')";
 	$updateInfo = $conn->query($sss);
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
