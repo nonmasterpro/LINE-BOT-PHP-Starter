@@ -331,10 +331,10 @@ function getMassage($text,$uid)
 		 $text = 'จำนวนวันลาของคุณเหลือ		';
 		 if ($result->num_rows > 0) {
 			 while($roww = $result->fetch_assoc()) {
-				 $text.=  "ลาป่วย ".$roww["quota"]." วัน ";
+				 $text.=  "ลาป่วย ".$roww["quota"]." วัน 								";
 			 }
 			 while($roww = $result2->fetch_assoc()) {
-				 $text.="ลากิจ ".$roww["quota"]." วัน ";
+				 $text.="ลากิจ ".$roww["quota"]." วัน 									";
 			}
 			while($roww = $result3->fetch_assoc()) {
 				$text.="ลาพักร้อน ".$roww["quota"]." วันค่ะ 😙 ";
