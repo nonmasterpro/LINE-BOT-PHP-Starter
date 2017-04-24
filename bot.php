@@ -346,9 +346,9 @@ function getMassage($text,$uid)
 }
 else if ($rowuser["status"]==2){
 	$s = "INSERT INTO leaving (cause,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลาป่วย')";
-	$updateInfo = $conn->query($s);
-	$updateStatus = "UPDATE users SET status=9 WHERE uid_line='".$uid."'";
 	$rowuser["status"] = 9;
+	$updateInfo = $conn->query($s);
+	$updateStatus = "UPDATE users SET status=$rowuser["status"] WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
 
 	$val2 = "SELECT text_val FROM msg_val WHERE id_val = '".$rowuser["status"]."'";
