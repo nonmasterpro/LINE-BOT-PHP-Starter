@@ -325,17 +325,21 @@ function getMassage($text,$uid)
 		 $quotaP = "SELECT * FROM leaving_quota WHERE type='ลาป่วย' AND id_card = '".$rowuser["id_card"]."'";
 		 $quotaK = "SELECT * FROM leaving_quota WHERE type='ลากิจ' AND id_card = '".$rowuser["id_card"]."'";
 		 $quotaS = "SELECT * FROM leaving_quota WHERE type='ลาพักร้อน' AND id_card = '".$rowuser["id_card"]."'";
-		 $result = getcurrent($conn->query($quotaP));
+		 $result = $conn->query($quotaP);
 		 $result2 = $conn->query($quotaK);
 		 $result3 = $conn->query($quotaS);
+		 $data= '';
+		 $text = '';
+		 if ($result->num_rows > 0) {
+			 while($roww1 = $result3->fetch_assoc()) {
+				 $text.=$roww["quota"];
+			 }
+			 while($roww = $result2->fetch_assoc()) {
+				 $text.=$roww["quota"];
+			}
 
-
-		//  if ($result->num_rows > 0) {
-
-
-
-			 return "จำนวนวันลาป่วยของคุณเหลือ ". $result." วันค่ะ 😙 ";
-		//  }
+			 return "จำนวนวันลาป่วยของคุณเหลือ ".$text." วันค่ะ 😙 ";
+		 }
 
 		 }
 
@@ -455,11 +459,7 @@ else if ($rowuser["status"]==2){
   //      return $text;
   //  }
 }
-function getcurrent($data){
-	while($data = $result->fetch_assoc()) {
-		return $data["quota"];
-	}
-}
+
 function getTemplate(){
 	return
 		["type" => "template",
