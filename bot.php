@@ -340,7 +340,7 @@ function getMassage($text,$uid)
 				$text.="ลาพักร้อน ".$roww["quota"]." วันค่ะ 😙 ";
 		 }
 
-			 return echo n12br($text);
+			 return $text;
 		 }
 
 		 }
