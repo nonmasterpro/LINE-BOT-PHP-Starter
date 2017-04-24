@@ -329,7 +329,7 @@ function getMassage($text,$uid)
 		 $result2 = $conn->query($quotaK);
 		 $result3 = $conn->query($quotaS);
 		 $data= '';
-		 $text = 'จำนวนวันลาของคุณเหลือ';
+		 $text = 'จำนวนวันลาของคุณเหลือ /n';
 		 if ($result->num_rows > 0) {
 			 while($roww = $result->fetch_assoc()) {
 				 $text.=  "ลาป่วย ".$roww["quota"]." วันค่ะ 😙 ";
