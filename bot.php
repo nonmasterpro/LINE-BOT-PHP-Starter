@@ -358,7 +358,7 @@ else if ($rowuser["status"]==2){
 		}
 
 }else if ($rowuser["status"]==2.1){
-	$sss = "UPDATE leaving SET day='$text' WHERE cause='งงง' ";
+	$sss = "UPDATE leaving SET day='$text' WHERE cause='".$text."' ";
 	$updateInfo = $conn->query($sss);
 	$updateStatus = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
