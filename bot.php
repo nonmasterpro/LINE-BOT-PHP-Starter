@@ -274,9 +274,9 @@ if (!is_null($events['events'])) {
 
 function getMassage($text,$uid)
 {
-   $file = file_get_contents('text.json');
-   $data = json_decode($file, true);
-   unset($file);
+  //  $file = file_get_contents('text.json');
+  //  $data = json_decode($file, true);
+  //  unset($file);
   //  return "uid";
    // Create connection
 	 $servername = "ap-cdbr-azure-southeast-b.cloudapp.net";
@@ -388,16 +388,16 @@ else if ($rowuser["status"]==2){
 
 
    //prevent memory leaks for large json.
-   if (isset($data[$text])) {
-       return $data[$text];
-   }else{
-       $data[$text] = '';
-       //save the file
-       file_put_contents('text.json',json_encode($data));
-       //release memory
-       unset($data);
-       return $text;
-   }
+  //  if (isset($data[$text])) {
+  //      return $data[$text];
+  //  }else{
+  //      $data[$text] = '';
+  //      //save the file
+  //      file_put_contents('text.json',json_encode($data));
+  //      //release memory
+  //      unset($data);
+  //      return $text;
+  //  }
 }
 
 function getTemplate(){
