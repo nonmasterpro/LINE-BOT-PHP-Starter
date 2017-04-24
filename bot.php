@@ -322,7 +322,7 @@ function getMassage($text,$uid)
 //เช็คโควต้าลา
 		 else if ($row["id_key"]==6){
 
-		 $quota = "SELECT * FROM leaving_quota WHERE id_card = '".$rowuser["id_card"]."'";
+		 $quota = "SELECT * FROM leaving_quota WHERE type='ลากิจ' WHERE id_card = '".$rowuser["id_card"]."'";
 		 $result = $conn->query($quota);
 		 if ($result->num_rows > 0) {
 			 while($roww = $result->fetch_assoc()) {
