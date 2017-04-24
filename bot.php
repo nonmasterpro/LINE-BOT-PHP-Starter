@@ -350,9 +350,9 @@ else if ($rowuser["status"]==2){
 	$updateStatus = "UPDATE users SET status=9 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
 
-	$vall = "SELECT * FROM msg_val WHERE id_val = '".$rowuser["status"]."'";
-	$resultVall = $conn->query($vall);
-		while($row3 = $resultVal->fetch_assoc()) {
+	$val2 = "SELECT * FROM msg_val WHERE id_val = '".$rowuser["status"]."'";
+	$resultVal2 = $conn->query($val2);
+		while($row3 = $resultVal2->fetch_assoc()) {
 
 			return $row3["text_val"];
 		}
