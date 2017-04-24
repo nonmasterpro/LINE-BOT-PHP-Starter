@@ -354,8 +354,6 @@ else if ($rowuser["status"]==2){
 	$resultVal = $conn->query($val);
 		while($row3 = $resultVal->fetch_assoc()) {
 
-			$ss = "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
-			$up = $conn->query($ss);
 			return $row3["text_val"];
 		}
 
