@@ -326,7 +326,7 @@ function getMassage($text,$uid)
 		 $result = $conn->query($quota);
 		 if ($result->num_rows > 0) {
 			 while($roww = $result->fetch_assoc()) {
-				 return "จำนวนวันลาป่วยของคุณเหลือ ".$roww["quota"];
+				 return "จำนวนวันลาป่วยของคุณเหลือ ".$roww["quota"]." วันค่ะ 😙";
 			 }
 		 }
 
