@@ -328,8 +328,7 @@ function getMassage($text,$uid)
 		 $result = $conn->query($quotaP);
 		 $result2 = $conn->query($quotaK);
 		 $result3 = $conn->query($quotaS);
-		 $data= '';
-		 $data2= '';
+	
 
 		 if ($result->num_rows > 0) {
 			 while($roww1 = $result3->fetch_assoc()) {
