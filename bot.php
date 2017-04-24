@@ -330,12 +330,12 @@ function getMassage($text,$uid)
 		 $result3 = $conn->query($quotaS);
 
 
-		 if ($result->num_rows > 0) {
+		//  if ($result->num_rows > 0) {
 
-			
+
 
 			 return "จำนวนวันลาป่วยของคุณเหลือ ". $result." วันค่ะ 😙 ";
-		 }
+		//  }
 
 		 }
 
