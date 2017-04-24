@@ -457,7 +457,7 @@ else if ($rowuser["status"]==2){
 }
 function getcurrent($data){
 	while($data = $result->fetch_assoc()) {
-		return $roww["quota"];
+		return $data["quota"];
 	}
 }
 function getTemplate(){
