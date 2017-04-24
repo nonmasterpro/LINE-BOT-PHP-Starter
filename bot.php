@@ -331,14 +331,17 @@ function getMassage($text,$uid)
 		 $data= '';
 		 $text = '';
 		 if ($result->num_rows > 0) {
-			 while($roww1 = $result3->fetch_assoc()) {
-				 $text.=$roww1["quota"];
+			 while($roww1 = $result->fetch_assoc()) {
+				 $text.=  "จำนวนวันลาป่วยของคุณเหลือ ".$roww1["quota"];
 			 }
 			 while($roww = $result2->fetch_assoc()) {
 				 $text.=$roww["quota"];
 			}
+			while($roww = $result3->fetch_assoc()) {
+				$text.=$roww["quota"]." วันค่ะ 😙 ";
+		 }
 
-			 return "จำนวนวันลาป่วยของคุณเหลือ ".$text." วันค่ะ 😙 ";
+			 return $text;
 		 }
 
 		 }
