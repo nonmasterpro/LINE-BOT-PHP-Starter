@@ -350,6 +350,12 @@ else if ($rowuser["status"]==2){
 	$updateStatus = "UPDATE users SET status=9 WHERE uid_line='".$uid."'";
 	$up = $conn->query($updateStatus);
 
+	$val2 = "SELECT * FROM msg_val WHERE id_val = '".$rowuser["status"]."'";
+	$resultVal2 = $conn->query($val2);
+		while($row3 = $resultVal2->fetch_assoc()) {
+			return $row3["text_val"];
+		}
+
 }else if ($rowuser["status"]==3){
 	$ss = "INSERT INTO leaving (cause,name,type) VALUES ('".$text."','".$rowuser["name"]."','ลากิจ')";
 	$updateInfo = $conn->query($ss);
@@ -364,14 +370,6 @@ else if ($rowuser["status"]==2){
 	$up = $conn->query($updateStatus);
 
 	return "ขอบคุณค่าา 😍";
-}else if ($rowuser["status"]==9){
-	$val2 = "SELECT * FROM msg_val WHERE id_val = '".$rowuser["status"]."'";
-	$resultVal2 = $conn->query($val2);
-		while($row3 = $resultVal2->fetch_assoc()) {
-
-			return $row3["text_val"];
-		}
-
 }
 
 }
