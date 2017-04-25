@@ -35,28 +35,33 @@ if (!is_null($events['events'])) {
 			if($resultUser->num_rows > 0){
 	 		 while($rowuser = $resultUser->fetch_assoc()) {
 	 			 if($rowuser["status"]==0){
-	 				// return getConfirm();
-	 				//  if ($rowuser["id_card"] == null) {
-	 				// 	$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
-	 				// 	$result = $conn->query($sql);
-	 				// 	return "วาซาบิ รบกวนตัวเองบอกชื่อหน่อยน้าา (> _ <)";
-	 				// }else
-	 				// $sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
-	 				// $result = $conn->query($sql);
-	 				// if($rowuser["name"] != null){
 
-	 				// }
 
-	 				$sql 	= "UPDATE users SET uid_line='$userId',status=1 WHERE id_card='".$text."'";
+
+	 				$sql 	= "UPDATE users SET uid_line='$userId' WHERE id_card='".$text."'";
 	 				$result = $conn->query($sql);
-					$ans = "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
 
+
+					$messages = getConfirm();
+					// $messages = [
+					// 	'type' => 'text',
+					// 	'text' => $ans
+					// ];
+
+				}else if ($text=='yes'){
+					$sql2 	= "UPDATE users SET status=1 WHERE uid_line='".$userId."'";
+	 				$result2 = $conn->query($sql2);
+					$ans = "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
 					$messages = [
 						'type' => 'text',
 						'text' => $ans
 					];
-
-	 			 }
+				}else if ($text=='no'){
+					$sql22 	= "UPDATE users SET status=0 WHERE uid_line='".$userId."'";
+	 				$result22 = $conn->query($sql22);
+					$sql3 	= "DELETE uid_line FROM users WHERE uid_line='".$userId."'";
+	 				$result3 = $conn->query($sql3);
+				}
 
 			if($rowuser["status"]==1){
 			$key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
