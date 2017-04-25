@@ -328,26 +328,28 @@ function getMassage($text,$uid)
 //เช็คโควต้าลา
 		 else if ($row["id_key"]==6){
 
-		 $quotaP = "SELECT * FROM leaving_quota WHERE type='ลาป่วย' AND id_card = '".$rowuser["id_card"]."'";
-		 $quotaK = "SELECT * FROM leaving_quota WHERE type='ลากิจ' AND id_card = '".$rowuser["id_card"]."'";
-		 $quotaS = "SELECT * FROM leaving_quota WHERE type='ลาพักร้อน' AND id_card = '".$rowuser["id_card"]."'";
-		 $result = $conn->query($quotaP);
-		 $result2 = $conn->query($quotaK);
-		 $result3 = $conn->query($quotaS);
-		 $text = 'จำนวนวันลาของคุณเหลือ		';
-		 if ($result->num_rows > 0) {
-			 while($roww = $result->fetch_assoc()) {
-				 $text.=  "ลาป่วย ".$roww["quota"]." วัน 								";
-			 }
-			 while($roww = $result2->fetch_assoc()) {
-				 $text.="ลากิจ ".$roww["quota"]." วัน 									";
-			}
-			while($roww = $result3->fetch_assoc()) {
-				$text.="ลาพักร้อน ".$roww["quota"]." วันค่ะ 😙 ";
-		 }
+		//  $quotaP = "SELECT * FROM leaving_quota WHERE type='ลาป่วย' AND id_card = '".$rowuser["id_card"]."'";
+		//  $quotaK = "SELECT * FROM leaving_quota WHERE type='ลากิจ' AND id_card = '".$rowuser["id_card"]."'";
+		//  $quotaS = "SELECT * FROM leaving_quota WHERE type='ลาพักร้อน' AND id_card = '".$rowuser["id_card"]."'";
+		//  $result = $conn->query($quotaP);
+		//  $result2 = $conn->query($quotaK);
+		//  $result3 = $conn->query($quotaS);
+		//  $text = 'จำนวนวันลาของคุณเหลือ		';
+		//  if ($result->num_rows > 0) {
+		// 	 while($roww = $result->fetch_assoc()) {
+		// 		 $text.=  "ลาป่วย ".$roww["quota"]." วัน 								";
+		// 	 }
+		// 	 while($roww = $result2->fetch_assoc()) {
+		// 		 $text.="ลากิจ ".$roww["quota"]." วัน 									";
+		// 	}
+		// 	while($roww = $result3->fetch_assoc()) {
+		// 		$text.="ลาพักร้อน ".$roww["quota"]." วันค่ะ 😙 ";
+		//  }
+		 //
+		// 	 return $text;
+		//  }
 
-			 return $text;
-		 }
+		return "https://www.google.co.th";
 
 		 }
 
