@@ -438,9 +438,15 @@ function getMassage($text,$uid)
 				}
     }
 	}else{
+		$key = "SELECT text FROM msg_unknow WHERE text = '".$text."'";
+    $result = $conn->query($key);
+ 	 	if ($result->num_rows > 0) {
+		return "ไปกินก๋วยเตี๋ยวเรือดีกว่าา 😜";
+	}else{
 		$s = "INSERT INTO msg_unknow (text) VALUES ('".$text."')";
 		$updateInfo = $conn->query($s);
     return "ไปกินก๋วยเตี๋ยวเรือดีกว่าา 😜";
+	}
  }
 }
 // else if ($rowuser["status"]==2){
