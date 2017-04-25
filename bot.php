@@ -478,19 +478,19 @@ function getTemplate(){
 				"text" => "Please select",
 				"actions" => [
 										[
-											"type"=> "message",
+											"type"=> "uri",
 											"label"=> "ลาป่วย 🤢",
-											"text"=> "ลาป่วย"
+											"uri"=> "https://google.co.th"
 										],
 										[
-											"type"=> "message",
+											"type"=> "uri",
 											"label"=> "ลากิจ 🤓",
-											"text"=> "ลากิจ"
+											"uri"=> "https://google.co.th"
 										],
 										[
-											"type"=> "message",
+											"type"=> "uri",
 											"label"=> "ลาพักร้อน 🤠",
-											"text"=> "ลาพักร้อน"
+											"uri"=> "https://google.co.th"
 										],
 										[
                     "type"=> "uri",
