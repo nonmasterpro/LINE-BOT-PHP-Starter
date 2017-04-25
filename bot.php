@@ -49,6 +49,7 @@ if (!is_null($events['events'])) {
 
 	 				$sql 	= "UPDATE users SET uid_line='$userId',status=1 WHERE id_card='".$text."'";
 	 				$result = $conn->query($sql);
+
 	 				return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
 
 	 			 }
@@ -84,7 +85,10 @@ if (!is_null($events['events'])) {
 			// $sql = " * FROM users WHERE uid_line='".$uid."'";
 			// $sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
 			// $result = $conn->query($sql);
-			return "วาซาบิ ไม่เจอข้อมูลของคุณค่ะ 😥 ";
+			$messages = [
+				'type' => 'text',
+				'text' => "วาซาบิ ไม่เจอข้อมูลของคุณค่ะ 😥 "
+			];
 		}
 
 			// Build message to reply back
