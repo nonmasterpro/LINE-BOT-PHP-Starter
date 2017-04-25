@@ -583,7 +583,7 @@ function getConfirm($fn,$ln){
           [
             "type"=> "postback",
             "label"=> "ใช่",
-            "data"=> "$text=ใช่"
+            "data"=> $text="ใช่"
           ],
           [
             "type"=> "message",
