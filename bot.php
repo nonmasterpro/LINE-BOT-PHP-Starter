@@ -49,8 +49,12 @@ if (!is_null($events['events'])) {
 
 	 				$sql 	= "UPDATE users SET uid_line='$userId',status=1 WHERE id_card='".$text."'";
 	 				$result = $conn->query($sql);
+					$ans = "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
 
-	 				return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
+					$messages = [
+						'type' => 'text',
+						'text' => $ans
+					];
 
 	 			 }
 
