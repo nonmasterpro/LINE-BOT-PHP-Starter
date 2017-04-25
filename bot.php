@@ -291,22 +291,24 @@ function getMassage($text,$uid)
 			return "can't connect to db";
    }
 
-   $sql = "SELECT * FROM users WHERE uid_line='".$uid."'";
+   $sql = "SELECT * FROM users WHERE id_card='".$text."'";
 	 $resultUser = $conn->query($sql);
 
 	 if($resultUser->num_rows > 0){
 		 while($rowuser = $resultUser->fetch_assoc()) {
-			 if($rowuser["status"]==0.5){
+			 if($rowuser["status"]==0){
 				//  if ($rowuser["id_card"] == null) {
 				// 	$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
 				// 	$result = $conn->query($sql);
 				// 	return "วาซาบิ รบกวนตัวเองบอกชื่อหน่อยน้าา (> _ <)";
 				// }else
-				if($rowuser["name"] != null){
-					$sql 	= "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
+				// $sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
+				// $result = $conn->query($sql);
+				// if($rowuser["name"] != null){
+					$sql 	= "UPDATE users SET uid_line='$uid',status=1 WHERE id_card='".$text."'";
 					$result = $conn->query($sql);
 					return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
-				}
+				// }
 
 			 }
 			 else if($rowuser["status"]==1){
@@ -442,9 +444,9 @@ else if ($rowuser["status"]==2){
 
 }else{
 		// $sql = " * FROM users WHERE uid_line='".$uid."'";
-		$sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
-		$result = $conn->query($sql);
-		return "วาซาบิ ขอทราบหมายเลขบัตรประชาชนด้วยค่ะ 😁 ".$resultUser->num_rows;
+		// $sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
+		// $result = $conn->query($sql);
+		return "วาซาบิ ไม่เจอข้อมูลของคุณค่ะ 😥 ".$resultUser->num_rows;
 	}
 
 
