@@ -310,7 +310,7 @@ function getMassage($text,$uid)
 
 				$sql 	= "UPDATE users SET uid_line='$uid',status=1 WHERE id_card='".$text."'";
 				$result = $conn->query($sql);
-				return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
+				return "สวัสดีค่ะ คุณ ".$rowuser["name"]." ";
 
 			 }
 			 else if($rowuser["status"]==1){
