@@ -440,8 +440,7 @@ else if ($rowuser["status"]==2){
 
 }else{
 		// $sql = " * FROM users WHERE uid_line='".$uid."'";
-		echo "123";
-		$sql 	= "INSERT INTO users (uid_line) VALUES ('".$uid."')";
+		$sql 	= "UPDATE users SET uid_line='$uid' WHERE id_card='".$text."' ";
 		$result = $conn->query($sql);
 		return "วาซาบิ ขอทราบหมายเลขบัตรประชาชนด้วยค่ะ 😁 ";
 	}
