@@ -301,10 +301,10 @@ function getMassage($text,$uid)
 					$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
 					$result = $conn->query($sql);
 					return "วาซาบิ รบกวนตัวเองบอกชื่อหน่อยน้าา (> _ <)";
-				}else if($rowuser["name"] == null){
-					$sql 	= "UPDATE users SET name='".$text."', status=1 WHERE uid_line='".$uid."'";
+				}else if($rowuser["name"] != null){
+					$sql 	= "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 					$result = $conn->query($sql);
-					return "สวัสดีค่ะ คุณ   ".$text;
+					return "สวัสดีค่ะ คุณ ".$text."😁";
 				}
 
 			 }
