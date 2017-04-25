@@ -296,7 +296,7 @@ function getMassage($text,$uid)
 
 	 if($resultUser->num_rows > 0){
 		 while($rowuser = $resultUser->fetch_assoc()) {
-			 if($rowuser["status"]==0){
+			 if($rowuser["status"]==0.5){
 				//  if ($rowuser["id_card"] == null) {
 				// 	$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
 				// 	$result = $conn->query($sql);
@@ -442,7 +442,7 @@ else if ($rowuser["status"]==2){
 
 }else{
 		// $sql = " * FROM users WHERE uid_line='".$uid."'";
-		$sql 	= "UPDATE users SET uid_line='$uid' WHERE id_card='".$text."' ";
+		$sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
 		$result = $conn->query($sql);
 		return "วาซาบิ ขอทราบหมายเลขบัตรประชาชนด้วยค่ะ 😁 ";
 	}
