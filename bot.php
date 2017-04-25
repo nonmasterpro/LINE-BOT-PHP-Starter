@@ -311,9 +311,7 @@ function getMassage($text,$uid)
 					return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
 				// }
 
-			}else if($rowuser["status"]==99){
-				return "ขอโทษด้วยค่ะ ไม่สามารถใช้งานได้ค่ะ 🙃"
-			}
+			 }
 			 else if($rowuser["status"]==1){
 
 	 $key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
@@ -480,47 +478,28 @@ function getTemplate(){
 				"text" => "Please select",
 				"actions" => [
 										[
-											"type"=> "uri",
+											"type"=> "message",
 											"label"=> "ลาป่วย 🤢",
-											"uri"=> "https://google.co.th"
+											"text"=> "ลาป่วย"
 										],
 										[
-											"type"=> "uri",
+											"type"=> "message",
 											"label"=> "ลากิจ 🤓",
-											"uri"=> "https://google.co.th"
+											"text"=> "ลากิจ"
 										],
 										[
-											"type"=> "uri",
+											"type"=> "message",
 											"label"=> "ลาพักร้อน 🤠",
-											"uri"=> "https://google.co.th"
-										]
-
+											"text"=> "ลาพักร้อน"
+										],
+										[
+                    "type"=> "uri",
+                    "label"=> "View detail",
+                    "uri"=> "https://google.co.th"
+                		]
 									]
 		]]
 ;
 }
-
-// function getConfirm(){
-// 	return [
-// 		"type"=> "template",
-//   "altText"=> "this is a confirm template",
-//   "template"=> [
-//       "type"=> "confirm",
-//       "text"=> "Are you sure?",
-//       "actions"=> [
-//           [
-//             "type"=> "message",
-//             "label"=> "Yes",
-//             "text"=> "yes"
-//           ],
-//           [
-//             "type"=> "message",
-//             "label"=> "No",
-//             "text"=> "no"
-//           ]
-//       ]
-//   ]
-// ];
-// }
 
 echo "OK";
