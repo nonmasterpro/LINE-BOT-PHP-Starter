@@ -296,17 +296,17 @@ function getMassage($text,$uid)
 
 	 if($resultUser->num_rows > 0){
 		 while($rowuser = $resultUser->fetch_assoc()) {
-			 if($rowuser["status"]==0.5){
-				//  if ($rowuser["id_card"] == null) {
-				// 	$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
-				// 	$result = $conn->query($sql);
-				// 	return "วาซาบิ รบกวนตัวเองบอกชื่อหน่อยน้าา (> _ <)";
-				// }else if($rowuser["name"] == null){
-				// 	$sql 	= "UPDATE users SET name='".$text."', status=1 WHERE uid_line='".$uid."'";
-				// 	$result = $conn->query($sql);
-				// 	return "สวัสดีค่ะ คุณ   ".$text;
-				// }
-				return "111";
+			 if($rowuser["status"]==0){
+				 if ($rowuser["id_card"] == null) {
+					$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
+					$result = $conn->query($sql);
+					return "วาซาบิ รบกวนตัวเองบอกชื่อหน่อยน้าา (> _ <)";
+				}else if($rowuser["name"] == null){
+					$sql 	= "UPDATE users SET name='".$text."', status=1 WHERE uid_line='".$uid."'";
+					$result = $conn->query($sql);
+					return "สวัสดีค่ะ คุณ   ".$text;
+				}
+
 			 }
 			 else if($rowuser["status"]==1){
 
