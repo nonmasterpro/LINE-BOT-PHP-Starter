@@ -57,10 +57,13 @@ if (!is_null($events['events'])) {
 						'text' => $ans
 					];
 				}else if ($text=='no'){
-					$sql22 	= "UPDATE users SET status=0 WHERE uid_line='".$userId."'";
+					$sql22 	= "UPDATE users SET uid_line=null WHERE uid_line='".$userId."'";
 	 				$result22 = $conn->query($sql22);
-					$sql3 	= "DELETE uid_line FROM users WHERE uid_line='".$userId."'";
-	 				$result3 = $conn->query($sql3);
+					$ans = "รบกวนกรอกรหัสประชาชนของคุณอีกครั้งค่ะ 😁";
+					$messages = [
+						'type' => 'text',
+						'text' => $ans
+					];
 				}
 
 			if($rowuser["status"]==1){
