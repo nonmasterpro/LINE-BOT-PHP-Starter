@@ -323,7 +323,7 @@ function getMassage($text,$uid)
     while($row = $result->fetch_assoc()) {
 //เรียกเทมเพลทการลา
 			if($row["id_key"]==1){
- 			 return getTemplate();
+ 			 return getConfirm();
  		 }
 //เช็คโควต้าลา
 		 else if ($row["id_key"]==6){
