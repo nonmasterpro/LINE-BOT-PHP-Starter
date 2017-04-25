@@ -296,16 +296,16 @@ function getMassage($text,$uid)
 
 	 if($resultUser->num_rows > 0){
 		 while($rowuser = $resultUser->fetch_assoc()) {
-			 if($rowuser["status"]==0){
-				 if ($rowuser["id_card"] == null) {
-					$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
-					$result = $conn->query($sql);
-					return "วาซาบิ รบกวนตัวเองบอกชื่อหน่อยน้าา (> _ <)";
-				}else if($rowuser["name"] == null){
-					$sql 	= "UPDATE users SET name='".$text."', status=1 WHERE uid_line='".$uid."'";
-					$result = $conn->query($sql);
-					return "สวัสดีค่ะ คุณ   ".$text;
-				}
+			 if($rowuser["status"]==0.5){
+				//  if ($rowuser["id_card"] == null) {
+				// 	$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
+				// 	$result = $conn->query($sql);
+				// 	return "วาซาบิ รบกวนตัวเองบอกชื่อหน่อยน้าา (> _ <)";
+				// }else if($rowuser["name"] == null){
+				// 	$sql 	= "UPDATE users SET name='".$text."', status=1 WHERE uid_line='".$uid."'";
+				// 	$result = $conn->query($sql);
+				// 	return "สวัสดีค่ะ คุณ   ".$text;
+				// }
 			 }
 			 else if($rowuser["status"]==1){
 
@@ -440,6 +440,7 @@ else if ($rowuser["status"]==2){
 
 }else{
 		// $sql = " * FROM users WHERE uid_line='".$uid."'";
+		echo "123";
 		$sql 	= "INSERT INTO users (uid_line) VALUES ('".$uid."')";
 		$result = $conn->query($sql);
 		return "วาซาบิ ขอทราบหมายเลขบัตรประชาชนด้วยค่ะ 😁 ";
@@ -486,7 +487,12 @@ function getTemplate(){
 											"type"=> "message",
 											"label"=> "ลาพักร้อน 🤠",
 											"text"=> "ลาพักร้อน"
-										]
+										],
+										[
+                    "type"=> "uri",
+                    "label"=> "View detail",
+                    "uri"=> "https://google.co.th"
+                		]
 									]
 		]]
 ;
