@@ -298,7 +298,7 @@ function getMassage($text,$uid)
 	 if($resultUser->num_rows > 0){
 		 while($rowuser = $resultUser->fetch_assoc()) {
 			 if($rowuser["status"]==0){
-				 getConfirm();
+				return getConfirm();
 				//  if ($rowuser["id_card"] == null) {
 				// 	$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
 				// 	$result = $conn->query($sql);
