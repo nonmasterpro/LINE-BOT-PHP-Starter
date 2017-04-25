@@ -298,7 +298,7 @@ function getMassage($text,$uid)
 	 if($resultUser->num_rows > 0){
 		 while($rowuser = $resultUser->fetch_assoc()) {
 			 if($rowuser["status"]==0){
-				 getTemplate();
+				 return getTemplate();
 				//  if ($rowuser["id_card"] == null) {
 				// 	$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
 				// 	$result = $conn->query($sql);
@@ -311,7 +311,7 @@ function getMassage($text,$uid)
 					// $sql 	= "UPDATE users SET uid_line='$uid',status=1 WHERE id_card='".$text."'";
 					// $result = $conn->query($sql);
 					// return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
-					
+
 				// }
 
 			 }
