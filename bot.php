@@ -305,7 +305,7 @@ function getMassage($text,$uid)
 				if($rowuser["name"] != null){
 					$sql 	= "UPDATE users SET status=1 WHERE uid_line='".$uid."'";
 					$result = $conn->query($sql);
-					return "สวัสดีค่ะ คุณ ".$text."😁";
+					return "สวัสดีค่ะ คุณ ".$rowuser["name"]."😁";
 				}
 
 			 }
