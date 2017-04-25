@@ -581,9 +581,9 @@ function getConfirm($fn,$ln){
       "text"=> "ใช่คุณ ".$fn." ".$ln." รึป่าวคะ ?",
       "actions"=> [
           [
-            "type"=> "postback",
+            "type"=> "message",
             "label"=> "ใช่",
-            "data"=> "ใช่"
+            "text"=> "ใช่"
           ],
           [
             "type"=> "message",
