@@ -307,10 +307,12 @@ function getMassage($text,$uid)
 				// $sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
 				// $result = $conn->query($sql);
 				// if($rowuser["name"] != null){
-					$sql 	= "UPDATE users SET uid_line='$uid',status=1 WHERE id_card='".$text."'";
-					$result = $conn->query($sql);
-					return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
+
 				// }
+
+				// $sql 	= "UPDATE users SET uid_line='$uid',status=1 WHERE id_card='".$text."'";
+				// $result = $conn->query($sql);
+				// return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
 
 			 }
 			 else if($rowuser["status"]==1){
