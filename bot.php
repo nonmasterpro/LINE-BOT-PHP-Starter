@@ -38,7 +38,7 @@ if (!is_null($events['events'])) {
 	     while($row = $result->fetch_assoc()) {
 
 	 			if($row["id_key"]==1){
-	  			 $messages = getConfirm();
+	  			 $messages = getTemplate();
 	  		 }else{
 					 $messages = [
 		 				'type' => 'text',
