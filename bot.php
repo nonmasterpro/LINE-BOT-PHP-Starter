@@ -306,6 +306,7 @@ function getMassage($text,$uid)
 				// 	$result = $conn->query($sql);
 				// 	return "สวัสดีค่ะ คุณ   ".$text;
 				// }
+				return "111";
 			 }
 			 else if($rowuser["status"]==1){
 
