@@ -379,7 +379,7 @@ function getMassage($text,$uid)
 				return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
 
 			 }
-			 else if($rowuser["status"]==1){
+			 else if($rowuser["status"]==1 || $rowuser["status"]==99){
 
 	 $key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
    $result = $conn->query($key);
