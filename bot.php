@@ -51,7 +51,7 @@ if (!is_null($events['events'])) {
 				}else if ($text=='yes'){
 					$sql2 	= "UPDATE users SET status=1 WHERE uid_line='".$userId."'";
 	 				$result2 = $conn->query($sql2);
-					$ans = "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
+					$ans = "สวัสดีค่ะ คุณ ".$rowuser["firstname"]." 😁";
 					$messages = [
 						'type' => 'text',
 						'text' => $ans
@@ -426,7 +426,7 @@ function getMassage($text,$uid)
  }
 }
 else if ($rowuser["status"]==2){
-	$s = "INSERT INTO leaving (cause,name,type,status) VALUES ('".$text."','".$rowuser["name"]."','ลาป่วย',1)";
+	$s = "INSERT INTO leaving (cause,firstname,lastname,type,status) VALUES ('".$text."','".$rowuser["firstname"]."','".$rowuser["lastname"]."','ลาป่วย',1)";
 	$updateInfo = $conn->query($s);
 	$updateStatus = "UPDATE users SET status=2.1 WHERE uid_line='".$uid."'";
 	$rowuser["status"] = 2.1;
@@ -448,7 +448,7 @@ else if ($rowuser["status"]==2){
 
 	return "ขอบคุณค่าา 😍";
 }else if ($rowuser["status"]==3){
-	$ss = "INSERT INTO leaving (cause,name,type,status) VALUES ('".$text."','".$rowuser["name"]."','ลากิจ',1)";
+	$ss = "INSERT INTO leaving (cause,firstname,lastname,type,status) VALUES ('".$text."','".$rowuser["firstname"]."','".$rowuser["lastname"]."','ลากิจ',1)";
 	$updateInfo = $conn->query($ss);
 	$updateStatus = "UPDATE users SET status=3.1 WHERE uid_line='".$uid."'";
 	$rowuser["status"] = 3.1;
@@ -470,7 +470,7 @@ else if ($rowuser["status"]==2){
 
 	return "ขอบคุณค่าา 😍";
 }else if($rowuser["status"]==4){
-	$sss = "INSERT INTO leaving (cause,name,type,status) VALUES ('".$text."','".$rowuser["name"]."','ลาพักร้อน',1)";
+	$sss = "INSERT INTO leaving (cause,firstname,lastname,type,status) VALUES ('".$text."','".$rowuser["firstname"]."','".$rowuser["lastname"]."','ลาพักร้อน',1)";
 	$updateInfo = $conn->query($sss);
 	$updateStatus = "UPDATE users SET status=4.1 WHERE uid_line='".$uid."'";
 	$rowuser["status"] = 4.1;
