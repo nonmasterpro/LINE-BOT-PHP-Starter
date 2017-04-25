@@ -298,6 +298,7 @@ function getMassage($text,$uid)
 	 if($resultUser->num_rows > 0){
 		 while($rowuser = $resultUser->fetch_assoc()) {
 			 if($rowuser["status"]==0){
+				 getTemplate();
 				//  if ($rowuser["id_card"] == null) {
 				// 	$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
 				// 	$result = $conn->query($sql);
@@ -306,9 +307,11 @@ function getMassage($text,$uid)
 				// $sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
 				// $result = $conn->query($sql);
 				// if($rowuser["name"] != null){
-					$sql 	= "UPDATE users SET uid_line='$uid',status=1 WHERE id_card='".$text."'";
-					$result = $conn->query($sql);
-					return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
+
+					// $sql 	= "UPDATE users SET uid_line='$uid',status=1 WHERE id_card='".$text."'";
+					// $result = $conn->query($sql);
+					// return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
+					
 				// }
 
 			 }
@@ -478,28 +481,47 @@ function getTemplate(){
 				"text" => "Please select",
 				"actions" => [
 										[
-											"type"=> "message",
+											"type"=> "uri",
 											"label"=> "ลาป่วย 🤢",
-											"text"=> "ลาป่วย"
+											"uri"=> "https://google.co.th"
 										],
 										[
-											"type"=> "message",
+											"type"=> "uri",
 											"label"=> "ลากิจ 🤓",
-											"text"=> "ลากิจ"
+											"uri"=> "https://google.co.th"
 										],
 										[
-											"type"=> "message",
+											"type"=> "uri",
 											"label"=> "ลาพักร้อน 🤠",
-											"text"=> "ลาพักร้อน"
-										],
-										[
-                    "type"=> "uri",
-                    "label"=> "View detail",
-                    "uri"=> "https://google.co.th"
-                		]
+											"uri"=> "https://google.co.th"
+										]
+
 									]
 		]]
 ;
+}
+
+function getConfirm(){
+	return [
+		"type"=> "template",
+  "altText"=> "this is a confirm template",
+  "template"=> [
+      "type"=> "confirm",
+      "text"=> "Are you sure?",
+      "actions"=> [
+          [
+            "type"=> "message",
+            "label"=> "Yes",
+            "text"=> "yes"
+          ],
+          [
+            "type"=> "message",
+            "label"=> "No",
+            "text"=> "no"
+          ]
+      ]
+  ]
+	]
 }
 
 echo "OK";
