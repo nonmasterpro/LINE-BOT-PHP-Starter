@@ -311,7 +311,9 @@ function getMassage($text,$uid)
 					return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
 				// }
 
-			 }
+			}else if($rowuser["status"]==99){
+				return "ขอโทษด้วยค่ะ ไม่สามารถใช้งานได้ค่ะ 🙃"
+			}
 			 else if($rowuser["status"]==1){
 
 	 $key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
@@ -518,7 +520,7 @@ function getConfirm(){
           ]
       ]
   ]
-	]
+];
 }
 
 echo "OK";
