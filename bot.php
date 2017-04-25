@@ -66,7 +66,7 @@ if (!is_null($events['events'])) {
 					];
 				}
 
-			if($rowuser["status"]==1){
+			if($rowuser["status"]==1 || $rowuser["status"]==99){
 			$key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
 	    $result = $conn->query($key);
 
@@ -75,8 +75,17 @@ if (!is_null($events['events'])) {
 	     // output data of each row
 	     while($row = $result->fetch_assoc()) {
 
-	 			if($row["id_key"]==1){
-	  			 $messages = getTemplate();
+	 			if($row["id_key"]==1 ){
+					if($rowuser["status"]==1){
+						$messages = getTemplate();
+					}else{
+							$ans = "ไม่สามารถใช้งานระบบได้ค่ะ 😰";
+							$messages = [
+								'type' => 'text',
+								'text' => $ans
+							];
+					}
+
 	  		 }else{
 					 $messages = [
 		 				'type' => 'text',
@@ -90,13 +99,14 @@ if (!is_null($events['events'])) {
 				'text' => getMassage($text,$userId)
 			];
 	  }
-} else if ($rowuser["status"]==99){
-	$ans = "ไม่สามารถใช้งานระบบได้ค่ะ 😰";
-	$messages = [
-		'type' => 'text',
-		'text' => $ans
-	];
 }
+// else if ($rowuser["status"]==99){
+// 	$ans = "ไม่สามารถใช้งานระบบได้ค่ะ 😰";
+// 	$messages = [
+// 		'type' => 'text',
+// 		'text' => $ans
+// 	];
+// }
 	}
 
 	}else{
