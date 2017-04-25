@@ -29,6 +29,30 @@ if (!is_null($events['events'])) {
 			$dbname = "chatbot_db";
 			$conn = mysqli_connect($servername, $username, $password, $dbname);
 
+			$sql = "SELECT * FROM users WHERE id_card='".$text."' or uid_line='".$uid."'";
+		 	$resultUser = $conn->query($sql);
+
+			if($resultUser->num_rows > 0){
+	 		 while($rowuser = $resultUser->fetch_assoc()) {
+	 			 if($rowuser["status"]==0){
+	 				// return getConfirm();
+	 				//  if ($rowuser["id_card"] == null) {
+	 				// 	$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
+	 				// 	$result = $conn->query($sql);
+	 				// 	return "วาซาบิ รบกวนตัวเองบอกชื่อหน่อยน้าา (> _ <)";
+	 				// }else
+	 				// $sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
+	 				// $result = $conn->query($sql);
+	 				// if($rowuser["name"] != null){
+
+	 				// }
+
+	 				$sql 	= "UPDATE users SET uid_line='$uid',status=1 WHERE id_card='".$text."'";
+	 				$result = $conn->query($sql);
+	 				return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
+
+	 			 }
+
 			$key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
 	    $result = $conn->query($key);
 
@@ -52,6 +76,15 @@ if (!is_null($events['events'])) {
 				'text' => getMassage($text,$userId)
 			];
 	  }
+
+	}
+
+	}else{
+			// $sql = " * FROM users WHERE uid_line='".$uid."'";
+			// $sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
+			// $result = $conn->query($sql);
+			return "วาซาบิ ไม่เจอข้อมูลของคุณค่ะ 😥 ".$resultUser->num_rows;
+		}
 
 			// Build message to reply back
 
