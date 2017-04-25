@@ -291,8 +291,9 @@ function getMassage($text,$uid)
 			return "can't connect to db";
    }
 
-   $sql = "SELECT * FROM users WHERE id_card='".$text."'";
+   $sql = "SELECT * FROM users WHERE id_card='".$text."' or uid_line='".$uid."'";
 	 $resultUser = $conn->query($sql);
+
 
 	 if($resultUser->num_rows > 0){
 		 while($rowuser = $resultUser->fetch_assoc()) {
