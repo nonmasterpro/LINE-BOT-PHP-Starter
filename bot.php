@@ -42,13 +42,13 @@ if (!is_null($events['events'])) {
 	 				$result = $conn->query($sql);
 
 
-					$messages = getConfirm();
+					$messages = getConfirm($rowuser["firstname"],$rowuser["lastname"]);
 					// $messages = [
 					// 	'type' => 'text',
 					// 	'text' => $ans
 					// ];
 
-				}else if ($text=='yes'){
+				}else if ($text=='ใช่'){
 					$sql2 	= "UPDATE users SET status=1 WHERE uid_line='".$userId."'";
 	 				$result2 = $conn->query($sql2);
 					$ans = "สวัสดีค่ะ คุณ ".$rowuser["firstname"]." 😁";
@@ -56,7 +56,7 @@ if (!is_null($events['events'])) {
 						'type' => 'text',
 						'text' => $ans
 					];
-				}else if ($text=='no'){
+				}else if ($text=='ไม่ใช่'){
 					$sql22 	= "UPDATE users SET uid_line=null WHERE uid_line='".$userId."'";
 	 				$result22 = $conn->query($sql22);
 					$ans = "รบกวนกรอกรหัสประชาชนของคุณอีกครั้งค่ะ 😁";
@@ -553,23 +553,23 @@ function getTemplate(){
 	];
 }
 
-function getConfirm(){
+function getConfirm($fn,$ln){
 	return [
 		"type"=> "template",
   "altText"=> "this is a confirm template",
   "template"=> [
       "type"=> "confirm",
-      "text"=> "Are you sure?",
+      "text"=> "ใช่คุณ ".$fn." ".$ln." รึป่าวคะ ?",
       "actions"=> [
           [
             "type"=> "message",
-            "label"=> "Yes",
-            "text"=> "yes"
+            "label"=> "ใช่",
+            "text"=> "ใช่"
           ],
           [
             "type"=> "message",
-            "label"=> "No",
-            "text"=> "no"
+            "label"=> "ไม่ใช่",
+            "text"=> "ไม่ใช่"
           ]
       ]
   ]
