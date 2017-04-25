@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
 
 			if($resultUser->num_rows > 0){
 	 		 while($rowuser = $resultUser->fetch_assoc()) {
-	 			 if($rowuser["status"]==0){
+	 			 if($rowuser["status"]==0 && $rowuser["uid_line"]==null){
 
 
 
