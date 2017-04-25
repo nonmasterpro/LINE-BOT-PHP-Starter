@@ -232,9 +232,9 @@ if (!is_null($events['events'])) {
 		            "text"=> "yes"
 		          ],
 		          [
-		            "type"=> "postback",
+		            "type"=> "message",
 		            "label"=> "No",
-		            "data"=> "no"
+		            "text"=> "no"
 		          ]
 		      ]
 		  ]
@@ -296,7 +296,7 @@ function getMassage($text,$uid)
 	 if($resultUser->num_rows > 0){
 		 while($rowuser = $resultUser->fetch_assoc()) {
 			 if($rowuser["status"]==0){
-				return getConfirm();
+				// return getConfirm();
 				//  if ($rowuser["id_card"] == null) {
 				// 	$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
 				// 	$result = $conn->query($sql);
@@ -308,9 +308,9 @@ function getMassage($text,$uid)
 
 				// }
 
-				// $sql 	= "UPDATE users SET uid_line='$uid',status=1 WHERE id_card='".$text."'";
-				// $result = $conn->query($sql);
-				// return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
+				$sql 	= "UPDATE users SET uid_line='$uid',status=1 WHERE id_card='".$text."'";
+				$result = $conn->query($sql);
+				return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
 
 			 }
 			 else if($rowuser["status"]==1){
@@ -323,7 +323,7 @@ function getMassage($text,$uid)
     while($row = $result->fetch_assoc()) {
 //เรียกเทมเพลทการลา
 			if($row["id_key"]==1){
- 			 return getTemplate();
+ 			 return getConfirm();
  		 }
 //เช็คโควต้าลา
 		 else if ($row["id_key"]==6){
@@ -499,8 +499,8 @@ function getTemplate(){
                     "uri"=> "https://google.co.th"
                 		]
 									]
-		]]
-;
+		]
+	];
 }
 
 function getConfirm(){
