@@ -232,9 +232,9 @@ if (!is_null($events['events'])) {
 		            "text"=> "yes"
 		          ],
 		          [
-		            "type"=> "message",
+		            "type"=> "postback",
 		            "label"=> "No",
-		            "text"=> "no"
+		            "data"=> "no"
 		          ]
 		      ]
 		  ]
