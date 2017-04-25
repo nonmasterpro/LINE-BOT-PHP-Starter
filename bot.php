@@ -428,7 +428,9 @@ function getMassage($text,$uid)
 				}
     }
 	}else{
-     return "ไปกินก๋วยเตี๋ยวเรือดีกว่าา 😜";
+		$s = "INSERT INTO msg_unknow (text) VALUES ('".$text."')";
+		$updateInfo = $conn->query($s);
+    return "ไปกินก๋วยเตี๋ยวเรือดีกว่าา 😜";
  }
 }
 else if ($rowuser["status"]==2){
