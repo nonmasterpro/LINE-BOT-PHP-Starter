@@ -53,6 +53,7 @@ if (!is_null($events['events'])) {
 
 	 			 }
 
+			if($rowuser["status"]==1){
 			$key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
 	    $result = $conn->query($key);
 
@@ -76,7 +77,7 @@ if (!is_null($events['events'])) {
 				'text' => getMassage($text,$userId)
 			];
 	  }
-
+}
 	}
 
 	}else{
