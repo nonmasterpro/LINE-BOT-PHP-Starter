@@ -90,6 +90,12 @@ if (!is_null($events['events'])) {
 				'text' => getMassage($text,$userId)
 			];
 	  }
+} else if ($rowuser["status"]==99){
+	$ans = "ไม่สามารถใช้งานระบบได้ค่ะ 😰";
+	$messages = [
+		'type' => 'text',
+		'text' => $ans
+	];
 }
 	}
 
@@ -542,12 +548,7 @@ function getTemplate(){
 											"type"=> "uri",
 											"label"=> "ลาพักร้อน 🤠",
 											"uri"=> "https://google.co.th"
-										],
-										[
-                    "type"=> "uri",
-                    "label"=> "View detail",
-                    "uri"=> "https://google.co.th"
-                		]
+										]
 									]
 		]
 	];
