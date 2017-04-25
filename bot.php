@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
 			$dbname = "chatbot_db";
 			$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-			$sql = "SELECT * FROM users WHERE id_card='".$text."' or uid_line='".$uid."'";
+			$sql = "SELECT * FROM users WHERE id_card='".$text."' or uid_line='".$userId."'";
 		 	$resultUser = $conn->query($sql);
 
 			if($resultUser->num_rows > 0){
@@ -47,7 +47,7 @@ if (!is_null($events['events'])) {
 
 	 				// }
 
-	 				$sql 	= "UPDATE users SET uid_line='$uid',status=1 WHERE id_card='".$text."'";
+	 				$sql 	= "UPDATE users SET uid_line='$userId',status=1 WHERE id_card='".$text."'";
 	 				$result = $conn->query($sql);
 	 				return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
 
