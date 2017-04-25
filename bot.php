@@ -310,7 +310,7 @@ function getMassage($text,$uid)
 
 				$sql 	= "UPDATE users SET uid_line='$uid',status=1 WHERE id_card='".$text."'";
 				$result = $conn->query($sql);
-				return "สวัสดีค่ะ คุณ ".$rowuser["name"]." ";
+				return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
 
 			 }
 			 else if($rowuser["status"]==1){
@@ -323,7 +323,7 @@ function getMassage($text,$uid)
     while($row = $result->fetch_assoc()) {
 //เรียกเทมเพลทการลา
 			if($row["id_key"]==1){
- 			 return getConfirm();
+ 			 return getTemplate();
  		 }
 //เช็คโควต้าลา
 		 else if ($row["id_key"]==6){
