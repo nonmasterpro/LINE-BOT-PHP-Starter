@@ -379,9 +379,9 @@ function getMassage($text,$uid)
 				return "สวัสดีค่ะ คุณ ".$rowuser["name"]." 😁";
 
 			 }
-			 else if($rowuser["status"]==1 || $rowuser["status"]==99){
+	else if($rowuser["status"]==1 || $rowuser["status"]==99){
 
-	 $key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
+	 $key = "SELECT id_key FROM msg_key WHERE status=1 AND text_key = '".$text."'";
    $result = $conn->query($key);
 	 if ($result->num_rows > 0) {
 
@@ -417,7 +417,7 @@ function getMassage($text,$uid)
 		 //
 		//  }
 
-			$val = "SELECT * FROM msg_val WHERE id_val = '".$row["id_key"]."'";
+			$val = "SELECT * FROM msg_val WHERE id_val = '".$row["id_key"]."' ";
 			$resultVal = $conn->query($val);
         while($row2 = $resultVal->fetch_assoc()) {
 					if($row["id_key"]==2){
@@ -440,7 +440,7 @@ function getMassage($text,$uid)
 	}else{
 		$key = "SELECT text FROM msg_unknow WHERE text = '".$text."'";
     $result = $conn->query($key);
- 	 	if ($result->num_rows > 0) {
+ 	 		if ($result->num_rows > 0) {
 			$sql = "SELECT * FROM msg_auto order by RAND() LIMIT 7";
 			$resultMsg = $conn->query($sql);
 			while($row = $resultMsg->fetch_assoc()) {
@@ -448,14 +448,14 @@ function getMassage($text,$uid)
 			}
 
 		// return "ไปกินก๋วยเตี๋ยวเรือดีกว่าา 😜";
-		}else{
-		$s = "INSERT INTO msg_unknow (text) VALUES ('".$text."')";
-		$updateInfo = $conn->query($s);
-		$sql = "SELECT * FROM msg_auto order by RAND() LIMIT 7";
-		$resultMsg = $conn->query($sql);
-		while($row = $resultMsg->fetch_assoc()) {
-			return $row["text"];
-		}
+			}else{
+			$s = "INSERT INTO msg_unknow (text) VALUES ('".$text."')";
+			$updateInfo = $conn->query($s);
+			$sql = "SELECT * FROM msg_auto order by RAND() LIMIT 7";
+			$resultMsg = $conn->query($sql);
+			while($row = $resultMsg->fetch_assoc()) {
+				return $row["text"];
+			}
 	}
  }
 }
