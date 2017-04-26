@@ -441,7 +441,7 @@ function getMassage($text,$uid)
 		$key = "SELECT text FROM msg_unknow WHERE text = '".$text."'";
     $result = $conn->query($key);
  	 	if ($result->num_rows > 0) {
-			$sql = "SELECT * FROM msg_auto";
+			$sql = "SELECT * FROM msg_auto order by RAND() LIMIT 5";
 			$resultMsg = $conn->query($sql);
 			while($row = $resultMsg->fetch_assoc()) {
 				return $row["text"];
