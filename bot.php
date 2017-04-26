@@ -444,7 +444,7 @@ function getMassage($text,$uid)
 			$sql = "SELECT * FROM msg_auto";
 			$resultMsg = $conn->query($sql);
 			while($row = $resultMsg->fetch_assoc()) {
-				return rand($row["text"]);
+				return $row["text"];
 			}
 
 		// return "ไปกินก๋วยเตี๋ยวเรือดีกว่าา 😜";
