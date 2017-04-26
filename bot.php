@@ -48,7 +48,13 @@ if (!is_null($events['events'])) {
 					// 	'text' => $ans
 					// ];
 
-				}else if ($text=='ใช่'){
+				}else if($rowuser["uid_line"]!=null){
+					$ans = "รหัสประจำตัวประชาชนซ้ำค่ะ รบกวนกรอกรหัสประชาชนของคุณอีกครั้งค่ะ 😁";
+					$messages = [
+						'type' => 'text',
+						'text' => $ans
+					];
+					}else if ($text=='ใช่'){
 					$sql2 	= "UPDATE users SET status=1 WHERE uid_line='".$userId."'";
 	 				$result2 = $conn->query($sql2);
 					$ans = "สวัสดีค่ะ คุณ ".$rowuser["firstname"]." 😁";
