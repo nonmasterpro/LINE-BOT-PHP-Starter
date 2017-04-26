@@ -441,7 +441,7 @@ function getMassage($text,$uid)
 		$key = "SELECT text FROM msg_unknow WHERE text = '".$text."'";
     $result = $conn->query($key);
  	 	if ($result->num_rows > 0) {
-			$sql = "SELECT * FROM msg_auto order by RAND() LIMIT 5";
+			$sql = "SELECT * FROM msg_auto order by RAND() LIMIT 10";
 			$resultMsg = $conn->query($sql);
 			while($row = $resultMsg->fetch_assoc()) {
 				return $row["text"];
@@ -451,7 +451,11 @@ function getMassage($text,$uid)
 		}else{
 		$s = "INSERT INTO msg_unknow (text) VALUES ('".$text."')";
 		$updateInfo = $conn->query($s);
-    return "ไปกินก๋วยเตี๋ยวเรือดีกว่าา 😜";
+		$sql = "SELECT * FROM msg_auto order by RAND() LIMIT 10";
+		$resultMsg = $conn->query($sql);
+		while($row = $resultMsg->fetch_assoc()) {
+			return $row["text"];
+		}
 	}
  }
 }
