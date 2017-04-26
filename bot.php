@@ -48,7 +48,7 @@ if (!is_null($events['events'])) {
 					// 	'text' => $ans
 					// ];
 
-				}
+
 					}else if ($text=='ใช่'){
 					$sql2 	= "UPDATE users SET status=1 WHERE uid_line='".$userId."'";
 	 				$result2 = $conn->query($sql2);
