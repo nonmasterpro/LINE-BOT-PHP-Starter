@@ -110,31 +110,20 @@ if (!is_null($events['events'])) {
 
 	}
 
-}else {
-	while($rowuser = $resultUser->fetch_assoc()) {
-		if($text!=$rowuser["id_card"]){
+}else if(preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $text)){
+	$messages = [
+		'type' => 'text',
+		'text' => "😥 "
+	];
+}else{
+			// $sql = " * FROM users WHERE uid_line='".$uid."'";
+			// $sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
+			// $result = $conn->query($sql);
 			$messages = [
 				'type' => 'text',
 				'text' => "วาซาบิ ไม่เจอข้อมูลของคุณค่ะ รบกวนกรอกรหัสประจำตัวประชาชนอีกครั้งค่ะ😥 "
 			];
-		}else {
-			$messages = [
-				'type' => 'text',
-				'text' => "สัส😥 "
-			];
 		}
-	}
-
-}
-// else{
-// 			// $sql = " * FROM users WHERE uid_line='".$uid."'";
-// 			// $sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
-// 			// $result = $conn->query($sql);
-// 			$messages = [
-// 				'type' => 'text',
-// 				'text' => "วาซาบิ ไม่เจอข้อมูลของคุณค่ะ รบกวนกรอกรหัสประจำตัวประชาชนอีกครั้งค่ะ😥 "
-// 			];
-// 		}
 
 			// Build message to reply back
 
