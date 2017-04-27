@@ -52,7 +52,7 @@ if (!is_null($events['events'])) {
 					}else if ($text=='ใช่'){
 					$sql2 	= "UPDATE users SET status=1 WHERE uid_line='".$userId."'";
 	 				$result2 = $conn->query($sql2);
-					$ans = "สวัสดีค่ะ คุณ ".$rowuser["firstname"]." 😁";
+					$ans = "สวัสดีค่ะคุณ ".$rowuser["firstname"]." 🤗";
 					$messages = [
 						'type' => 'text',
 						'text' => $ans
