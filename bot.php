@@ -88,13 +88,10 @@ if (!is_null($events['events'])) {
 					}
 
 	  		 }else{
-					  $messages = ['messages' => [[
-					 				'type' => 'text',
-					 				'text' => getMassage($text,$userId)
-				 			],[
-									'type' => 'text',
-									'text' => getMassage($text,$userId)
-						]]];
+					 $messages = [
+		 				'type' => 'text',
+		 				'text' => getMassage($text,$userId)
+		 			];
 				 }
 	     }
 	 	}else if($rowuser["uid_line"]!=$userId){
@@ -131,7 +128,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-			$messages,
+				'messages' => [$messages],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
