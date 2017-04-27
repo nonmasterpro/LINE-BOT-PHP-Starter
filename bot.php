@@ -110,7 +110,7 @@ if (!is_null($events['events'])) {
 
 	}
 
-}else if(preg_match('/[\u{1F600}-\u{1F6FF}]/', $text)){
+}else if(preg_match('/\xEE[\x80-\xBF][\x80-\xBF]|\xEF[\x81-\x83][\x80-\xBF]/', $text)){
 	$messages = [
 		'type' => 'text',
 		'text' => "😥 "
