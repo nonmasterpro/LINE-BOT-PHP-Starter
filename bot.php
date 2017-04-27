@@ -269,15 +269,22 @@ else{
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
+
 			$messages = [
-
-
-				"type" => "image",
-    		"originalContentUrl" => "https://pbs.twimg.com/profile_images/655066410087940096/QSUlrrlm.png",
-    		"previewImageUrl" => "https://pbs.twimg.com/profile_images/655066410087940096/QSUlrrlm.png"
-
-
+				'type' => 'sticker',
+				'packageId' => '1',
+				'stickerId' => (rand(1,17))
 			];
+
+			// $messages = [
+			//
+			//
+			// 	"type" => "image",
+    	// 	"originalContentUrl" => "https://pbs.twimg.com/profile_images/655066410087940096/QSUlrrlm.png",
+    	// 	"previewImageUrl" => "https://pbs.twimg.com/profile_images/655066410087940096/QSUlrrlm.png"
+			//
+			//
+			// ];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -306,26 +313,33 @@ else{
 			$userId = $event['source']['userId'];
 
 			// Build message to reply back
-			$messages = [
 
-				"type"=> "template",
-		  "altText"=> "this is a confirm template",
-		  "template"=> [
-		      "type"=> "confirm",
-		      "text"=> "Are you sure?",
-		      "actions"=> [
-		          [
-		            "type"=> "message",
-		            "label"=> "Yes",
-		            "text"=> "yes"
-		          ],
-		          [
-		            "type"=> "message",
-		            "label"=> "No",
-		            "text"=> "no"
-		          ]
-		      ]
-		  ]
+			$messages = [
+				'type' => 'sticker',
+				'packageId' => '1',
+				'stickerId' => (rand(1,17))
+			];
+
+			// $messages = [
+			//
+			// 	"type"=> "template",
+		  // "altText"=> "this is a confirm template",
+		  // "template"=> [
+		  //     "type"=> "confirm",
+		  //     "text"=> "Are you sure?",
+		  //     "actions"=> [
+		  //         [
+		  //           "type"=> "message",
+		  //           "label"=> "Yes",
+		  //           "text"=> "yes"
+		  //         ],
+		  //         [
+		  //           "type"=> "message",
+		  //           "label"=> "No",
+		  //           "text"=> "no"
+		  //         ]
+		  //     ]
+		  // ]
 
 				// 'type' => 'sticker',
 				// 'packageId' => '1',
