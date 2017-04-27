@@ -111,8 +111,11 @@ if (!is_null($events['events'])) {
 	}
 
 }else if($text=='Help' || $text=='help'){
-
-	return "aaaaaaa";
+	$ans = "aaaaa";
+	$messages = [
+		'type' => 'text',
+		'text' => $ans
+	];
 }
 else{
 	if(preg_match('/[0-9]/', $text)){
