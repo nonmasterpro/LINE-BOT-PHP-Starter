@@ -110,7 +110,7 @@ if (!is_null($events['events'])) {
 
 	}
 
-}else if($resultUser->num_rows == 0){
+}else {
 	while($rowuser = $resultUser->fetch_assoc()) {
 		if($text!=$rowuser["id_card"]){
 			$messages = [
