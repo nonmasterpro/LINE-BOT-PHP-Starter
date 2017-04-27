@@ -94,7 +94,7 @@ if (!is_null($events['events'])) {
 				 			],[
 									'type' => 'text',
 									'text' => getMassage($text,$userId)
-						]];
+						]]];
 				 }
 	     }
 	 	}else if($rowuser["uid_line"]!=$userId){
