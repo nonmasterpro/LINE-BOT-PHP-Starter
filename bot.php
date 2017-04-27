@@ -110,20 +110,31 @@ if (!is_null($events['events'])) {
 
 	}
 
-}else if($text = preg_match('/\xEE[\x80-\xBF][\x80-\xBF]|\xEF[\x81-\x83][\x80-\xBF]/',$text)){
-	$messages = [
-		'type' => 'text',
-		'text' => "สัส😥 "
-	];
-}else{
-			// $sql = " * FROM users WHERE uid_line='".$uid."'";
-			// $sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
-			// $result = $conn->query($sql);
+}else if($resultUser->num_rows == 0){
+	while($rowuser = $resultUser->fetch_assoc()) {
+		if($text!=$rowuser["id_card"]){
 			$messages = [
 				'type' => 'text',
 				'text' => "วาซาบิ ไม่เจอข้อมูลของคุณค่ะ รบกวนกรอกรหัสประจำตัวประชาชนอีกครั้งค่ะ😥 "
 			];
+		}else {
+			$messages = [
+				'type' => 'text',
+				'text' => "สัส😥 "
+			];
 		}
+	}
+
+}
+// else{
+// 			// $sql = " * FROM users WHERE uid_line='".$uid."'";
+// 			// $sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
+// 			// $result = $conn->query($sql);
+// 			$messages = [
+// 				'type' => 'text',
+// 				'text' => "วาซาบิ ไม่เจอข้อมูลของคุณค่ะ รบกวนกรอกรหัสประจำตัวประชาชนอีกครั้งค่ะ😥 "
+// 			];
+// 		}
 
 			// Build message to reply back
 
