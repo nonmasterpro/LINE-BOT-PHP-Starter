@@ -107,13 +107,7 @@ if (!is_null($events['events'])) {
 			];
 	  }
 }
-// else if ($rowuser["status"]==99){
-// 	$ans = "ไม่สามารถใช้งานระบบได้ค่ะ 😰";
-// 	$messages = [
-// 		'type' => 'text',
-// 		'text' => $ans
-// 	];
-// }
+
 	}
 
 	}else{
@@ -369,7 +363,6 @@ function getMassage($text,$uid)
 	 if($resultUser->num_rows > 0){
 		 while($rowuser = $resultUser->fetch_assoc()) {
 			 if($rowuser["status"]==0){
-				// return getConfirm();
 				//  if ($rowuser["id_card"] == null) {
 				// 	$sql 	= "UPDATE users SET id_card='".$text."' WHERE uid_line='".$uid."'";
 				// 	$result = $conn->query($sql);
@@ -566,8 +559,8 @@ function getTemplate(){
 		"template" => [
 				"type" => "buttons",
 				"thumbnailImageUrl" => "https://f.ptcdn.info/308/047/000/ogtr5llydKGk55LG7kM-o.jpg",
-				"title" => "Menu",
-				"text" => "Please select",
+				"title" => "เมนูการลา",
+				"text" => "เลือกหนึ่งอย่างค่ะ",
 				"actions" => [
 										[
 											"type"=> "uri",
