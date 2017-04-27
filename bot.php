@@ -424,7 +424,7 @@ function getMassage($text,$uid)
 		 //
 		//  }
 
-			$val = "SELECT * FROM msg_val WHERE id_val = '".$row["id_key"]."' ";
+			$val = "SELECT * FROM msg_val order by RAND() LIMIT 7 WHERE id_val = '".$row["id_key"]."' ";
 			$resultVal = $conn->query($val);
         while($row2 = $resultVal->fetch_assoc()) {
 					if($row["id_key"]==2){
