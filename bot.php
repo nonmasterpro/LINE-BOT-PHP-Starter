@@ -67,7 +67,7 @@ if (!is_null($events['events'])) {
 					];
 				}
 
-			if($rowuser["status"]==1 || $rowuser["status"]==99){
+		if($rowuser["status"]==1 || $rowuser["status"]==99){
 			$key = "SELECT id_key FROM msg_key WHERE text_key = '".$text."'";
 	    $result = $conn->query($key);
 
@@ -129,6 +129,7 @@ if (!is_null($events['events'])) {
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
+				'messages' => [$messages]
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
