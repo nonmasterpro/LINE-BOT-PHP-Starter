@@ -11,8 +11,6 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 
-
-
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 
@@ -20,7 +18,7 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
+			// Get userId
 			$userId = $event['source']['userId'];
 
 			$servername = "ap-cdbr-azure-southeast-b.cloudapp.net";
@@ -36,18 +34,14 @@ if (!is_null($events['events'])) {
 	 		 while($rowuser = $resultUser->fetch_assoc()) {
 	 			 if($rowuser["status"]==0 && $rowuser["uid_line"]==null){
 
-
-
 	 				$sql 	= "UPDATE users SET uid_line='$userId' WHERE id_card='".$text."'";
 	 				$result = $conn->query($sql);
-
 
 					$messages = getConfirm($rowuser["firstname"],$rowuser["lastname"]);
 					// $messages = [
 					// 	'type' => 'text',
 					// 	'text' => $ans
 					// ];
-
 
 					}else if ($text=='ใช่'){
 					$sql2 	= "UPDATE users SET status=1 WHERE uid_line='".$userId."'";
@@ -121,8 +115,6 @@ if (!is_null($events['events'])) {
 		}
 
 			// Build message to reply back
-
-
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -250,11 +242,9 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 
-
 				"type" => "image",
     		"originalContentUrl" => "https://pbs.twimg.com/profile_images/655066410087940096/QSUlrrlm.png",
     		"previewImageUrl" => "https://pbs.twimg.com/profile_images/655066410087940096/QSUlrrlm.png"
-
 
 			];
 
@@ -305,7 +295,6 @@ if (!is_null($events['events'])) {
 		          ]
 		      ]
 		  ]
-
 				// 'type' => 'sticker',
 				// 'packageId' => '1',
 				// 'stickerId' => (rand(1,17))
@@ -558,7 +547,7 @@ function getTemplate(){
 		"altText" => "this is a buttons template",
 		"template" => [
 				"type" => "buttons",
-				"thumbnailImageUrl" => "https://f.ptcdn.info/308/047/000/ogtr5llydKGk55LG7kM-o.jpg",
+				"thumbnailImageUrl" => "http://www.vet.psu.ac.th/personal/wp-content/uploads/2016/08/head-leave.jpg",
 				"title" => "เมนูการลา ",
 				"text" => "กรุณาเลือกรูปแบบการลาค่ะ 😊",
 				"actions" => [
