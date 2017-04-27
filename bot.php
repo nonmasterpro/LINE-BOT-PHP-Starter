@@ -88,13 +88,14 @@ if (!is_null($events['events'])) {
 					}
 
 	  		 }else{
-					 $messages = [[
+					  $messages[0] = [
 		 				'type' => 'text',
 		 				'text' => getMassage($text,$userId)
-		 			],[
-					 'type' => 'text',
-					 'text' => getMassage($text,$userId)
-				 ]];
+		 			];
+						$messages[1] =[
+						 'type' => 'text',
+						 'text' => getMassage($text,$userId)
+					 ]
 				 }
 	     }
 	 	}else if($rowuser["uid_line"]!=$userId){
