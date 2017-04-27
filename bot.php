@@ -110,7 +110,12 @@ if (!is_null($events['events'])) {
 
 	}
 
-	}else{
+}else if(preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $text)){
+	$messages = [
+		'type' => 'text',
+		'text' => "สัส😥 "
+	];
+}else{
 			// $sql = " * FROM users WHERE uid_line='".$uid."'";
 			// $sql 	= "UPDATE users SET uid_line='$uid', status=0.5 WHERE id_card='".$text."' ";
 			// $result = $conn->query($sql);
