@@ -604,7 +604,7 @@ function getTemplate(){
 				"actions" => [
 										[
 											"type"=> "uri",
-											"label"=> "ลา 🤔",
+											"label"=> "ลางาน 🤔",
 											"uri"=> "https://google.co.th"
 										],
 										[
