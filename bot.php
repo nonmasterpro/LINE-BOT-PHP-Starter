@@ -73,7 +73,7 @@ if (!is_null($events['events'])) {
 
 	 			if($row["id_key"]==1 ){
 					if($rowuser["status"]==1){
-						$messages = getTemplate();
+						$messages = getTemplate($rowuser["id"]);
 					}else{
 							$ans = "ไม่สามารถใช้งานระบบได้ค่ะ 😰";
 							$messages = [
@@ -592,7 +592,7 @@ function getMassage($text,$uid){
   //  }
 }
 
-function getTemplate(){
+function getTemplate($id){
 	return
 		["type" => "template",
 		"altText" => "this is a buttons template",
@@ -605,12 +605,12 @@ function getTemplate(){
 										[
 											"type"=> "uri",
 											"label"=> "ลางาน 🤔",
-											"uri"=> "https://google.co.th"
+											"uri"=> "https://google.co.th/"."$id"
 										],
 										[
 											"type"=> "uri",
 											"label"=> "เช็คการลา & โควต้า 😉",
-											"uri"=> "https://google.co.th"
+											"uri"=> "https://google.co.th/"."$id"."/report"
 										]
 									]
 		]
