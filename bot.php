@@ -611,6 +611,11 @@ function getTemplate(){
 											"type"=> "uri",
 											"label"=> "เช็คการลา & โควต้าการลา 😉",
 											"uri"=> "https://google.co.th"
+										],
+										[
+											"type"=> "uri",
+											"label"=> "ลาพักร้อน 🤠",
+											"uri"=> "https://google.co.th"
 										]
 									]
 		]
