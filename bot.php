@@ -604,17 +604,12 @@ function getTemplate(){
 				"actions" => [
 										[
 											"type"=> "uri",
-											"label"=> "ลาป่วย 🤢",
+											"label"=> "ลา 🤔",
 											"uri"=> "https://google.co.th"
 										],
 										[
 											"type"=> "uri",
-											"label"=> "เช็คการลา & โควต้า 🤓",
-											"uri"=> "https://google.co.th"
-										],
-										[
-											"type"=> "uri",
-											"label"=> "ลาพักร้อน 🤠",
+											"label"=> "เช็คการลา & โควต้า 😉",
 											"uri"=> "https://google.co.th"
 										]
 									]
