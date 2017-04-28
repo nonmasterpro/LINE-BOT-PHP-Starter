@@ -11,8 +11,6 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 
-
-
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 
@@ -36,11 +34,8 @@ if (!is_null($events['events'])) {
 	 		 while($rowuser = $resultUser->fetch_assoc()) {
 	 			 if($rowuser["status"]==0 && $rowuser["uid_line"]==null){
 
-
-
 	 				$sql 	= "UPDATE users SET uid_line='$userId' WHERE id_card='".$text."'";
 	 				$result = $conn->query($sql);
-
 
 					$messages = getConfirm($rowuser["firstname"],$rowuser["lastname"]);
 					// $messages = [
@@ -372,8 +367,7 @@ else{
 }
 
 
-function getMassage($text,$uid)
-{
+function getMassage($text,$uid){
   //  $file = file_get_contents('text.json');
   //  $data = json_decode($file, true);
   //  unset($file);
@@ -610,17 +604,12 @@ function getTemplate(){
 				"actions" => [
 										[
 											"type"=> "uri",
-											"label"=> "ลาป่วย 🤢",
+											"label"=> "ลา 🤔",
 											"uri"=> "https://google.co.th"
 										],
 										[
 											"type"=> "uri",
-											"label"=> "ลากิจ 🤓",
-											"uri"=> "https://google.co.th"
-										],
-										[
-											"type"=> "uri",
-											"label"=> "ลาพักร้อน 🤠",
+											"label"=> "เช็คการลา & โควต้าการลา 😉",
 											"uri"=> "https://google.co.th"
 										]
 									]
